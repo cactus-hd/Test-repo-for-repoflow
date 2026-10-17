@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>راهنما و مستندات | بابل پلنر</title>
+    <style>
+        @font-face {
+            font-family: 'Estedad';
+            src: url('Estedad-Medium.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Estedad';
+            src: url('Estedad-ExtraBold.ttf') format('truetype');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Estedad', sans-serif;
+            background: linear-gradient(160deg, #fef9f0 0%, #faf5ff 50%, #f0f7ff 100%);
+            color: #1e1e1e;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 10px;
+            min-height: 100vh;
+        }
+
+        /* ========== نوار دسترسی سریع ========== */
+        .quick-nav {
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            max-width: 900px;
+            margin: 0 auto 20px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 24px;
+            padding: 10px 12px;
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(255, 154, 158, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            background: transparent;
+            color: #6b7280;
+            padding: 10px 18px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            border: 1.5px solid transparent;
+            cursor: pointer;
+            font-family: 'Estedad', sans-serif;
+            position: relative;
+        }
+
+        .nav-btn:hover,
+        .nav-btn.active {
+            background: #fff5f5;
+            color: #d4606b;
+            border-color: rgba(255, 154, 158, 0.4);
+            box-shadow: 0 6px 18px rgba(255, 154, 158, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .nav-btn .nav-emoji {
+            font-size: 1.2em;
+            transition: transform 0.2s;
+        }
+
+        .nav-btn:hover .nav-emoji {
+            transform: scale(1.15);
+        }
+
+        @media screen and (max-width: 480px) {
+            .quick-nav {
+                padding: 8px 6px;
+                gap: 5px;
+                border-radius: 18px;
+                top: 5px;
+            }
+            .nav-btn {
+                padding: 8px 12px;
+                font-size: 0.75rem;
+                border-radius: 12px;
+                gap: 4px;
+            }
+        }
+
+        /* ========== کانتینر اصلی ========== */
+        .docs-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: clamp(24px, 6vw, 36px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(251, 191, 36, 0.12);
+            padding: clamp(20px, 5vw, 40px) clamp(16px, 4vw, 32px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .docs-container::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            width: clamp(120px, 28vw, 200px);
+            height: clamp(120px, 28vw, 200px);
+            background: radial-gradient(circle, rgba(255, 154, 158, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .docs-container::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: clamp(100px, 22vw, 150px);
+            height: clamp(100px, 22vw, 150px);
+            background: radial-gradient(circle, rgba(142, 115, 205, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .docs-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* هدر اصلی */
+        .main-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(240, 237, 232, 0.8);
+        }
+
+        .logo-icon {
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecf9a 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: 800;
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+        }
+
+        .main-header h1 {
+            font-weight: 800;
+            font-size: clamp(1.3rem, 4vw, 1.7rem);
+            color: #1f2937;
+            line-height: 1.3;
+        }
+
+        /* ========== آکاردئون ========== */
+        .accordion-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .accordion-item {
+            border: 1.5px solid rgba(240, 237, 232, 0.7);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .accordion-item.open {
+            border-color: #ff9a9e;
+            box-shadow: 0 12px 30px rgba(255, 154, 158, 0.12);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .accordion-header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            font-family: 'Estedad', sans-serif;
+            font-size: clamp(0.95rem, 3vw, 1.05rem);
+            font-weight: 800;
+            color: #1f2937;
+            transition: all 0.25s ease;
+            text-align: right;
+            gap: 12px;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 251, 251, 0.8);
+        }
+
+        .accordion-header:focus-visible {
+            outline: 2px solid #ff9a9e;
+            outline-offset: 2px;
+            border-radius: 16px;
+        }
+
+        .accordion-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .accordion-icon {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        /* رنگ آیکون هر بخش */
+        .item-privacy .accordion-icon { background: #fff0f3; }
+        .item-backup .accordion-icon { background: #fff8e1; }
+        .item-internet .accordion-icon { background: #e8f0fe; }
+        .item-pricing .accordion-icon { background: #e8f5e9; }
+        .item-error .accordion-icon { background: #ffebee; }
+
+        .accordion-title {
+            font-weight: 800;
+            color: #1f2937;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+
+        .accordion-arrow {
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            border-radius: 50%;
+            background: rgba(245, 240, 235, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-arrow {
+            transform: rotate(180deg);
+            background: #fff0f3;
+            color: #d4606b;
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), padding 0.6s ease;
+            padding: 0 20px;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 4000px;
+            padding: 0 20px 24px;
+        }
+
+        .accordion-body-inner {
+            padding-top: 10px;
+            border-top: 1px solid rgba(245, 240, 235, 0.8);
+        }
+
+        /* ========== محتوای داخلی ========== */
+        h3 {
+            font-weight: 800;
+            font-size: clamp(1rem, 3.5vw, 1.15rem);
+            color: #1f2937;
+            margin: 20px 0 10px;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: clamp(0.9rem, 3vw, 0.98rem);
+            color: #4b5563;
+            margin-bottom: 16px;
+            text-align: justify;
+            word-break: break-word;
+            line-height: 1.95;
+        }
+
+        strong {
+            color: #b13e4b;
+            font-weight: 800;
+        }
+
+        .item-backup strong { color: #e65100; }
+        .item-internet strong { color: #1e40af; }
+        .item-pricing strong { color: #2e7d32; }
+        .item-error strong { color: #c62828; }
+
+        ul {
+            list-style: none;
+            padding-right: 0;
+            margin-bottom: 18px;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: clamp(0.85rem, 2.8vw, 0.93rem);
+            color: #4b5563;
+            line-height: 1.7;
+        }
+
+        ul li::before {
+            content: "🫧";
+            flex-shrink: 0;
+            font-size: 1rem;
+            margin-top: 2px;
+        }
+
+        .item-backup ul li::before { content: "💾"; }
+        .item-internet ul li::before { content: "📶"; }
+        .item-pricing ul li::before { content: "💰"; }
+        .item-error ul li::before { content: "🔧"; }
+
+        /* باکس‌های رنگی */
+        .alert-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%);
+            border-right: 5px solid #ff9800;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin: 18px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            box-shadow: 0 6px 20px rgba(255, 152, 0, 0.1);
+        }
+
+        .alert-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .alert-content { flex: 1; min-width: 0; }
+        .alert-content h3 { color: #e65100; margin: 0 0 8px; font-size: 1.05rem; }
+        .alert-content p { margin: 0 0 8px; font-size: 0.9rem; }
+        .alert-content ul { margin: 6px 0 0; }
+        .alert-content ul li { font-size: 0.85rem; margin-bottom: 5px; }
+        .alert-content ul li::before { content: "⚠️"; }
+
+        .info-box {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%);
+            border-right: 5px solid #60a5fa;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin: 18px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            box-shadow: 0 6px 20px rgba(96, 165, 250, 0.1);
+        }
+
+        .info-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .info-content { flex: 1; min-width: 0; }
+        .info-content h3 { color: #2563eb; margin: 0 0 8px; font-size: 1.05rem; }
+        .info-content p { margin: 0 0 8px; font-size: 0.9rem; }
+        .info-content ul { margin: 6px 0 0; }
+        .info-content ul li { font-size: 0.85rem; margin-bottom: 5px; }
+        .info-content ul li::before { content: "📶"; }
+
+        .error-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffebee 100%);
+            border-right: 5px solid #ef5350;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin: 18px 0;
+            box-shadow: 0 6px 20px rgba(239, 83, 80, 0.1);
+        }
+
+        .error-box h3 { color: #c62828; margin: 0 0 8px; font-size: 1.05rem; }
+        .error-box p { margin: 0 0 6px; font-size: 0.9rem; }
+
+        .success-box {
+            background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+            border-right: 5px solid #66bb6a;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin: 18px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            box-shadow: 0 6px 20px rgba(102, 187, 106, 0.1);
+        }
+
+        .success-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .success-content { flex: 1; min-width: 0; }
+        .success-content h3 { color: #2e7d32; margin: 0 0 8px; font-size: 1.05rem; }
+        .success-content p { margin: 0 0 8px; font-size: 0.9rem; }
+
+        /* کد باکس */
+        .code-box {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            text-align: left;
+            direction: ltr;
+            font-family: 'Courier New', monospace;
+            font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            line-height: 1.7;
+            border: 1px solid #313244;
+        }
+
+        .code-box .json-key { color: #89b4fa; }
+        .code-box .json-string { color: #a6e3a1; }
+        .code-box .json-number { color: #fab387; }
+        .code-box .json-bracket { color: #f9e2af; }
+
+        /* شماره‌های مرحله */
+        .step-list {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .step-list li {
+            counter-increment: step;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.93rem;
+            color: #4b5563;
+        }
+
+        .step-list li::before {
+            content: counter(step);
+            background: linear-gradient(135deg, #ff9a9e, #fab387);
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            margin-top: 1px;
+            box-shadow: 0 3px 8px rgba(255, 154, 158, 0.3);
+        }
+
+        /* پیشنهاد پیشگیری */
+        .prevention-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-right: 5px solid #4caf50;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin: 18px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.1);
+        }
+
+        .prevention-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .prevention-content { flex: 1; min-width: 0; }
+        .prevention-content h3 { color: #2e7d32; margin: 0 0 8px; font-size: 1.05rem; }
+        .prevention-content p { margin: 0 0 6px; font-size: 0.9rem; }
+
+        /* فوتر */
+        .footer-section {
+            text-align: center;
+            padding-top: 24px;
+            margin-top: 12px;
+            border-top: 2px solid rgba(240, 237, 232, 0.8);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecf9a 100%);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            transition: all 0.25s;
+            box-shadow: 0 10px 25px rgba(255, 154, 158, 0.35);
+            margin: 18px 0 10px;
+        }
+
+        .back-link:active {
+            transform: scale(0.96);
+            background: #d4606b;
+        }
+
+        .update-date {
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+
+        @media screen and (min-width: 768px) {
+            .back-link:hover {
+                background: #d4606b;
+                transform: translateY(-3px);
+                box-shadow: 0 14px 30px rgba(255, 154, 158, 0.45);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body { padding: 5px; }
+            .docs-container { padding: 18px 12px; }
+            .accordion-header { padding: 16px 14px; }
+            .accordion-body { padding: 0 14px; }
+            .accordion-item.open .accordion-body { padding: 0 14px 18px; }
+            .alert-box, .info-box, .success-box, .prevention-box { padding: 14px 16px; }
+            .step-list li { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== ناوبری سریع ========== -->
+    <nav class="quick-nav" id="quickNav">
+        <button class="nav-btn active" data-target="accordion-privacy">
+            <span class="nav-emoji">🔒</span> حریم خصوصی
+        </button>
+        <button class="nav-btn" data-target="accordion-backup">
+            <span class="nav-emoji">💾</span> پشتیبان‌گیری
+        </button>
+        <button class="nav-btn" data-target="accordion-internet">
+            <span class="nav-emoji">🌐</span> اینترنت
+        </button>
+        <button class="nav-btn" data-target="accordion-pricing">
+            <span class="nav-emoji">💰</span> هزینه‌ها
+        </button>
+        <button class="nav-btn" data-target="accordion-error">
+            <span class="nav-emoji">🚫</span> ارور 403
+        </button>
+    </nav>
+
+    <!-- ========== محتوای اصلی ========== -->
+    <div class="docs-container">
+        <div class="docs-content">
+
+            <!-- هدر -->
+            <div class="main-header">
+                <div class="logo-icon">B</div>
+                <h1>📚 مستندات بابل پلنر</h1>
+            </div>
+
+            <!-- لیست آکاردئونی -->
+            <div class="accordion-list">
+
+                <!-- ========== ۱. حریم خصوصی ========== -->
+                <div class="accordion-item item-privacy open" id="accordion-privacy">
+                    <button class="accordion-header" aria-expanded="true">
+                        <div class="accordion-header-left">
+                            <div class="accordion-icon">🔒</div>
+                            <span class="accordion-title">سیاست حفظ حریم خصوصی</span>
+                        </div>
+                        <div class="accordion-arrow">▼</div>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            <p>
+                                <strong>بابل پلنر (Bub Planner)</strong> یک اپلیکیشن برنامه‌ریزی شخصی و کاملاً رایگان است. ما عمیقاً به شفافیت و امنیت کاربران اعتقاد داریم.
+                            </p>
+                            <h3>وضعیت ذخیره‌سازی داده‌ها</h3>
+                            <p>
+                                ما <strong>هیچ‌گونه سرور، پایگاه داده یا بک‌اندی</strong> برای ذخیره اطلاعات کاربران نداریم. یعنی:
+                            </p>
+                            <ul>
+                                <li>هیچ اطلاعاتی از دستگاه شما به جایی ارسال نمی‌شود.</li>
+                                <li>ما به هیچ وجه به داده‌های برنامه شما دسترسی نداریم.</li>
+                                <li>حساب کاربری، ایمیل یا شماره موبایل وجود ندارد.</li>
+                            </ul>
+                            <h3>مجوزهای دسترسی</h3>
+                            <ul>
+                                <li><strong>اینترنت:</strong> فقط برای دریافت محتوای مجله، پادکست و به‌روزرسانی.</li>
+                                <li><strong>تقویم:</strong> برای نمایش رویدادها در ویجت (در صورت تمایل شما).</li>
+                            </ul>
+                            <p>ما هرگز به مخاطبین، پیامک‌ها، موقعیت مکانی، دوربین یا حافظه دستگاه شما دسترسی نداریم.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== ۲. پشتیبان‌گیری ========== -->
+                <div class="accordion-item item-backup" id="accordion-backup">
+                    <button class="accordion-header" aria-expanded="false">
+                        <div class="accordion-header-left">
+                            <div class="accordion-icon">💾</div>
+                            <span class="accordion-title">پشتیبان‌گیری و بازیابی اطلاعات</span>
+                        </div>
+                        <div class="accordion-arrow">▼</div>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            <p>
+                                یکی از مهم‌ترین قابلیت‌های بابل پلنر، امکان <strong>پشتیبان‌گیری (Backup)</strong> از اطلاعات شماست. چون برنامه سروری ندارد، این مسئولیت با شماست.
+                            </p>
+
+                            <div class="alert-box">
+                                <div class="alert-icon">⚠️</div>
+                                <div class="alert-content">
+                                    <h3>توجه: ما به فایل‌های پشتیبان شما دسترسی نداریم!</h3>
+                                    <p>
+                                        فایل پشتیبان <strong>مستقیماً روی دستگاه شما</strong> ذخیره می‌شود. ما هیچ راهی برای دیدن محتوای آن نداریم. مسئولیت نگهداری این فایل <strong>کاملاً با شماست.</strong>
+                                    </p>
+                                    <ul>
+                                        <li>فایل پشتیبان را در جای امنی مثل ایمیل یا گوگل درایو نگه دارید.</li>
+                                        <li>هر چند روز یکبار (مثلاً هفته‌ای یکبار) پشتیبان جدید بگیرید.</li>
+                                        <li>قبل از حذف برنامه یا تعویض گوشی، حتماً بکاپ بگیرید.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>فایل JSON چیست؟</h3>
+                            <p>
+                                وقتی خروجی پشتیبان می‌گیرید، یک فایل با پسوند <strong>json.</strong> دریافت می‌کنید (مثلاً: <strong>bubplanner_backup.json</strong>). این فایل شامل تمام تسک‌ها، عادت‌ها، یادداشت‌ها و تنظیمات شماست.
+                            </p>
+                            <div class="code-box">
+                                <span class="json-bracket">{</span><br>
+                                &nbsp;&nbsp;<span class="json-key">"tasks"</span>: <span class="json-bracket">[</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="json-bracket">{</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"title"</span>: <span class="json-string">"ورزش صبحگاهی"</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"priority"</span>: <span class="json-number">1</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"completed"</span>: <span class="json-number">false</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="json-bracket">}</span><br>
+                                &nbsp;&nbsp;<span class="json-bracket">]</span>,<br>
+                                &nbsp;&nbsp;<span class="json-key">"habits"</span>: <span class="json-bracket">[...]</span>,<br>
+                                &nbsp;&nbsp;<span class="json-key">"notes"</span>: <span class="json-bracket">[...]</span><br>
+                                <span class="json-bracket">}</span>
+                            </div>
+                            <p>
+                                اگر روزی گوشی جدید خریدید یا برنامه را دوباره نصب کردید، کافی است از بخش تنظیمات گزینه "بازیابی از پشتیبان" را بزنید و فایل JSON خود را انتخاب کنید.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== ۳. اینترنت ========== -->
+                <div class="accordion-item item-internet" id="accordion-internet">
+                    <button class="accordion-header" aria-expanded="false">
+                        <div class="accordion-header-left">
+                            <div class="accordion-icon">🌐</div>
+                            <span class="accordion-title">دسترسی به اینترنت و آنلاین بودن</span>
+                        </div>
+                        <div class="accordion-arrow">▼</div>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            <p>
+                                بابل پلنر <strong>عمداً به صورت آنلاین</strong> طراحی شده است. این یک انتخاب آگاهانه است تا برنامه‌ای <strong>زنده، پویا و همیشه در حال رشد</strong> داشته باشید.
+                            </p>
+                            <div class="info-box">
+                                <div class="info-icon">✨</div>
+                                <div class="info-content">
+                                    <h3>چرا آنلاین؟</h3>
+                                    <ul>
+                                        <li><strong>مجله "حباب امشب":</strong> هر شب شماره جدید با موضوعات روانشناسی و موفقیت.</li>
+                                        <li><strong>بخش پادکست‌ها:</strong> لیست پادکست‌های پیشنهادی همیشه در حال به‌روزرسانی.</li>
+                                        <li><strong>به‌روزرسانی خودکار:</strong> دریافت ویژگی‌های جدید و بهبود عملکرد.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p>
+                                <strong>کدام بخش‌ها آفلاین کار می‌کنند؟</strong> مدیریت تسک‌ها، باغچه عادت‌ها، بابل نوت، اتاق آرامش، آمار پیشرفت و بازی نور <strong>کاملاً بدون اینترنت</strong> کار می‌کنند.
+                            </p>
+                            <p>
+                                <strong>نکته مهم:</strong> در تمام ارتباطات، <strong>هیچ اطلاعات شخصی شما ارسال نمی‌شود.</strong> تمام درخواست‌ها ناشناس هستند.
+                            </p>
+                            <p>
+                                <strong>درباره هوش مصنوعی:</strong> این قابلیت <strong>موقتاً حذف شده</strong> و در حال حاضر در برنامه وجود ندارد.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== ۴. رایگان بودن ========== -->
+                <div class="accordion-item item-pricing" id="accordion-pricing">
+                    <button class="accordion-header" aria-expanded="false">
+                        <div class="accordion-header-left">
+                            <div class="accordion-icon">💰</div>
+                            <span class="accordion-title">آیا بابل پلنر رایگان است؟</span>
+                        </div>
+                        <div class="accordion-arrow">▼</div>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            <div class="success-box">
+                                <div class="success-icon">✅</div>
+                                <div class="success-content">
+                                    <h3>بله، بابل پلنر کاملاً رایگان است!</h3>
+                                    <p>
+                                        در حال حاضر <strong>تمام امکانات و ویژگی‌های بابل پلنر</strong> بدون هیچ هزینه‌ای در دسترس شماست. ما به این موضوع افتخار می‌کنیم و می‌خواهیم همه بتوانند از یک برنامه‌ریز خوب و دوست‌داشتنی استفاده کنند.
+                                    </p>
+                                </div>
+                            </div>
+                            <h3>اما در آینده چطور؟</h3>
+                            <p>
+                                ممکن است در آینده <strong>برخی ویژگی‌های جدید و پیشرفته</strong> را به صورت پولی ارائه دهیم. اما این رو تضمین می‌کنیم که:
+                            </p>
+                            <ul>
+                                <li>تمام ویژگی‌های <strong>فعلی و اصلی</strong> برنامه برای همیشه رایگان می‌مانند.</li>
+                                <li>اگر فیچر پولی اضافه شود، کاملاً <strong>اختیاری</strong> خواهد بود.</li>
+                                <li>قبل از هر تغییری، <strong>شفاف‌سازی کامل</strong> انجام می‌شود.</li>
+                            </ul>
+                            <p>
+                                هدف ما این نیست که از شما پول بگیریم. هدفمون اینه که بتونیم با اضافه کردن فیچرهای حرفه‌ای‌تر، هزینه‌های توسعه و سرور رو تأمین کنیم و بابل پلنر رو بهتر و بهتر بسازیم. 🫧
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== ۵. ارور 403 ========== -->
+                <div class="accordion-item item-error" id="accordion-error">
+                    <button class="accordion-header" aria-expanded="false">
+                        <div class="accordion-header-left">
+                            <div class="accordion-icon">🚫</div>
+                            <span class="accordion-title">ارور 403 گوگل — راهنمای رفع مشکل</span>
+                        </div>
+                        <div class="accordion-arrow">▼</div>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+
+                            <div class="error-box">
+                                <h3>🛑 این ارور چیه؟</h3>
+                                <p>
+                                    این ارور برای این اتفاق می‌افته که <strong>مدسکوریتی گوگل کاربر رو ربات تشخیص میده</strong> و اجازه ورود به سایت/اپلیکیشن رو نمی‌ده. در واقع گوگل فکر می‌کنه یه ربات می‌خواد وارد بشه و به خاطر همین دسترسی رو موقتاً مسدود می‌کنه.
+                                </p>
+                            </div>
+
+                            <h3>🤔 کی این ارور اتفاق می‌افته؟</h3>
+                            <p>
+                                دلیلی که شما به این ارور برمی‌خورید این هست که <strong>احتمالا شما در تلاش بودید بدون اینترنت و به صورت آفلاین وارد بابل پلنر بشید</strong> و بعد از از ارور اینترنت کانکشن، ناگهان اینترنتتون رو روشن کردید و با این ارور مواجه شدید. این تغییر وضعیت ناگهانی شبکه باعث میشه گوگل به درخواست شما شک کنه.
+                            </p>
+
+                            <h3>✅ چطور این ارور رفع میشه؟</h3>
+                            <p>
+                                اگه شما در دام این ارور افتادید <strong>نگران نباشید</strong>؛ این ارور <strong>کاملا موقتی</strong> هست و در بیشتر موارد، پس از مدت کوتاهی (حدود نیم ساعت) خود به خود از بین می‌رود.
+                            </p>
+                            <p>پیشنهاد می‌کنیم این مراحل رو به ترتیب انجام بدید:</p>
+
+                            <ol class="step-list">
+                                <li>
+                                    <div>
+                                        <strong>اتصال اینترنت خود را بررسی کنید</strong> و یک بار روی حالت هواپیما بذارید و بردارید. این کار ارتباط شبکه رو ریست می‌کنه.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <strong>گوشی رو ری‌استارت کنید.</strong> این کار هم در بسیاری از مواقع مشکل رو حل می‌کنه.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <strong>اگه حل نشد،</strong> سعی به پشتیبان‌گیری کنید و برنامه رو حذف و نصب کنید. (فقط حواستون باشه قبلش حتماً بکاپ بگیرید!)
+                                    </div>
+                                </li>
+                            </ol>
+
+                            <div class="prevention-box">
+                                <div class="prevention-icon">💡</div>
+                                <div class="prevention-content">
+                                    <h3>چیکار کنم دوباره به این ارور برخورد نکنم؟</h3>
+                                    <p>
+                                        برای بر نخوردن مجدد به این ارور، <strong>همیشه قبل از ورود به اپلیکیشن اینترنت خودتون رو روشن کنید.</strong> اینطوری گوگل درخواست ورود شما رو عادی و مطمئن تشخیص میده.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p style="margin-top: 20px;">
+                                <strong>نکته:</strong> ما هم می‌دونیم این ارور آزاردهنده‌ست و مدام در حال بررسی و بهبود این موضوع هستیم تا در نسخه‌های بعدی کمتر شاهدش باشید. 💪
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- پایان لیست آکاردئون -->
+
+            <!-- فوتر -->
+            <div class="footer-section">
+                <a href="index.html" class="back-link">🫧 بازگشت به بابل پلنر</a>
+                <p class="update-date">آخرین به‌روزرسانی: ۱۹ خرداد ۱۴۰۵</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // ========== مدیریت آکاردئون ==========
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        const navButtons = document.querySelectorAll('.nav-btn');
+
+        // تابع بستن همه آکاردئون‌ها
+        function closeAllAccordions() {
+            accordionItems.forEach(item => {
+                item.classList.remove('open');
+                item.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+            });
+            navButtons.forEach(btn => btn.classList.remove('active'));
+        }
+
+        // تابع باز کردن یک آکاردئون خاص
+        function openAccordion(accordionId) {
+            const target = document.getElementById(accordionId);
+            if (!target) return;
+
+            // بستن همه
+            closeAllAccordions();
+
+            // باز کردن هدف
+            target.classList.add('open');
+            target.querySelector('.accordion-header').setAttribute('aria-expanded', 'true');
+
+            // فعال کردن دکمه ناوبری مربوطه
+            const navBtn = document.querySelector(`[data-target="${accordionId}"]`);
+            if (navBtn) {
+                navBtn.classList.add('active');
+            }
+
+            // اسکرول به آکاردئون باز شده (با کمی تأخیر برای انیمیشن)
+            setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        // کلیک روی هدر هر آکاردئون
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            header.addEventListener('click', () => {
+                const accordionId = item.getAttribute('id');
+                if (item.classList.contains('open')) {
+                    // اگر باز بود، ببندش
+                    closeAllAccordions();
+                } else {
+                    // اگر بسته بود، بازش کن
+                    openAccordion(accordionId);
+                }
+            });
+        });
+
+        // کلیک روی دکمه‌های ناوبری
+        navButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-target');
+                openAccordion(targetId);
+            });
+        });
+
+        // باز نگه داشتن اولین آکاردئون در لود اولیه
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstAccordion = document.getElementById('accordion-privacy');
+            if (firstAccordion) {
+                firstAccordion.classList.add('open');
+                firstAccordion.querySelector('.accordion-header').setAttribute('aria-expanded', 'true');
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#FF6690" />
+    <meta name="description" content="راه‌های تماس با تیم بابل پلنر؛ پشتیبانی برنامه و پشتیبانی تبلیغات و فروش." />
+    <title>تماس با ما | بابل پلنر</title>
+    <style>
+        @font-face {
+            font-family: Estedad;
+            src: url('fonts/Estedad-Medium.ttf') format('truetype'), url('Estedad-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap
+        }
+
+        @font-face {
+            font-family: Estedad;
+            src: url('fonts/Estedad-ExtraBold.ttf') format('truetype'), url('Estedad-ExtraBold.ttf') format('truetype');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap
+        }
+
+        :root {
+            --pink: #FF6690;
+            --pink-deep: #ed4f7c;
+            --pink-soft: #fff1f5;
+            --pink-soft-2: #ffe5ed;
+            --ink: #202653;
+            --ink-soft: #626880;
+            --muted: #8d92a8;
+            --line: #eceef4;
+            --surface: #f8f9fb;
+            --dark: #15141a;
+            --dark-2: #1d1b23;
+            --mint: #72d5a1;
+            --lav: #8b7be8;
+            --white: #fff;
+            --shadow: 0 28px 70px rgba(31, 35, 74, .07);
+            --shadow-pink: 0 24px 65px rgba(255, 102, 144, .18);
+            --radius-xl: 30px;
+            --radius-lg: 24px;
+            --radius-md: 18px;
+            --radius-sm: 13px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            color: var(--ink);
+            font-family: Estedad, Tahoma, sans-serif;
+            font-weight: 500;
+            line-height: 1.9;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        button,
+        input {
+            font-family: inherit
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        ::selection {
+            background: var(--pink);
+            color: #fff
+        }
+
+        .container {
+            width: min(1080px, calc(100% - 48px));
+            margin-inline: auto
+        }
+
+        /* ===== Top Navigation — Rounded Glass Pill ===== */
+        .topbar {
+            position: sticky;
+            top: 14px;
+            z-index: 100;
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-radius: 34px;
+            border: 1px solid rgba(232, 235, 243, .7);
+            box-shadow:
+                0 10px 32px rgba(31, 35, 74, .08),
+                0 2px 8px rgba(31, 35, 74, .04);
+            width: min(1080px, calc(100% - 48px));
+            margin: 14px auto 0;
+            padding: 0 16px;
+            transition: box-shadow .3s ease, border-color .3s ease, transform .2s ease;
+        }
+
+        .topbar:hover {
+            box-shadow:
+                0 14px 40px rgba(31, 35, 74, .12),
+                0 4px 12px rgba(255, 102, 144, .06);
+            border-color: rgba(255, 102, 144, .18);
+        }
+
+        .topbar-inner {
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 0 4px;
+            width: 100%;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 17px;
+            font-weight: 800;
+            white-space: nowrap;
+            color: var(--ink);
+            transition: color .2s;
+        }
+
+        .brand:hover {
+            color: var(--pink);
+        }
+
+        .brand-mark {
+            width: 32px;
+            height: 32px;
+            border-radius: 11px;
+            background: linear-gradient(145deg, #ff83a6, #ff5d88);
+            display: grid;
+            place-items: center;
+            box-shadow: 0 8px 20px rgba(255, 102, 144, .3);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .brand:hover .brand-mark {
+            transform: rotate(-6deg) scale(1.06);
+            box-shadow: 0 12px 28px rgba(255, 102, 144, .4);
+        }
+
+        .brand-mark span {
+            width: 12px;
+            height: 12px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .brand-mark span:after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #fff;
+            left: 2px;
+            top: 2px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2px;
+            margin-inline: auto;
+            color: #555b74;
+            font-size: 12px;
+            align-items: center;
+        }
+
+        .nav a {
+            padding: 8px 16px;
+            border-radius: 16px;
+            transition: background .2s, color .2s;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            background: var(--pink-soft);
+            color: var(--pink);
+        }
+
+        /* active state */
+        .nav a.active {
+            background: var(--pink-soft);
+            color: var(--pink);
+            font-weight: 800;
+        }
+
+        .nav-cta {
+            border-radius: 18px;
+            padding: 12px 22px;
+            background: var(--pink);
+            color: #fff;
+            font-size: 11px;
+            box-shadow: 0 8px 24px rgba(255, 102, 144, .25);
+            transition: .25s;
+            white-space: nowrap;
+            font-weight: 800;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-cta:hover {
+            background: var(--pink-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(255, 102, 144, .35);
+        }
+
+        .menu-btn {
+            display: none;
+            border: 0;
+            background: var(--pink-soft);
+            color: var(--pink);
+            width: 46px;
+            height: 46px;
+            border-radius: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: .2s;
+            flex: none;
+        }
+
+        .menu-btn:hover {
+            background: var(--pink-soft-2);
+            transform: scale(1.06);
+        }
+
+        .mobile-drawer {
+            display: none;
+            padding: 10px 12px 16px;
+            border-top: 1px solid rgba(232, 235, 243, .6);
+            border-radius: 0 0 28px 28px;
+        }
+
+        .topbar.open .mobile-drawer {
+            display: grid;
+            gap: 2px;
+        }
+
+        .mobile-drawer a {
+            display: block;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 11px;
+            color: #666b84;
+            transition: background .2s, color .2s;
+        }
+
+        .mobile-drawer a:hover {
+            background: var(--pink-soft);
+            color: var(--pink);
+        }
+
+        /* primitives */
+        .section-space {
+            padding: 112px 0
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--pink);
+            font-size: 10px;
+            letter-spacing: .5px;
+            font-weight: 800
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 18px;
+            font-size: 11px;
+            gap: 8px;
+            border-radius: 14px;
+            font-weight: 800;
+            transition: .25s
+        }
+
+        .btn-primary {
+            background: var(--pink);
+            color: #fff;
+            box-shadow: 0 14px 34px rgba(255, 102, 144, .22)
+        }
+
+        .btn-primary:hover {
+            background: var(--pink-deep);
+            transform: translateY(-2px)
+        }
+
+        .pill {
+            padding: 7px 11px;
+            border: 1px solid #f0f1f6;
+            border-radius: 11px;
+            background: #fbfbfc;
+            color: var(--muted);
+            font-size: 9.5px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        /* contact hero */
+        .contact-hero {
+            padding: 70px 0 10px;
+            text-align: center
+        }
+
+        .contact-hero .container {
+            max-width: 640px
+        }
+
+        .contact-hero h1 {
+            font-size: 34px;
+            line-height: 1.55;
+            margin: 10px 0 14px;
+            font-weight: 500;
+            letter-spacing: -.4px
+        }
+
+        .contact-hero h1 strong {
+            font-weight: 800
+        }
+
+        .contact-hero p {
+            font-size: 12px;
+            line-height: 2.2;
+            color: var(--muted);
+            margin: 0
+        }
+
+        /* contact layout */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 26px;
+            align-items: start
+        }
+
+        .contact-group {
+            margin-bottom: 22px
+        }
+
+        .contact-group:last-child {
+            margin-bottom: 0
+        }
+
+        .contact-group-label {
+            display: block;
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--pink);
+            letter-spacing: .4px;
+            margin-bottom: 12px
+        }
+
+        .contact-list {
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 16px 45px rgba(31, 35, 74, .035)
+        }
+
+        .contact-row {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .contact-row:last-child {
+            border-bottom: 0
+        }
+
+        .contact-row .row-top {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 9px;
+            font-size: 11.5px;
+            font-weight: 800;
+            color: var(--ink)
+        }
+
+        .contact-row .row-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            background: var(--pink-soft);
+            display: grid;
+            place-items: center;
+            flex: none;
+            padding: 4px;
+        }
+
+        .contact-row .row-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .contact-row .row-value {
+            color: var(--muted);
+            font-size: 10.8px;
+            text-align: right
+        }
+
+        .contact-row .row-value span[dir="ltr"] {
+            unicode-bidi: isolate
+        }
+
+        .contact-row.is-link:hover {
+            background: var(--pink-soft)
+        }
+
+        .contact-row.is-link .row-value {
+            color: var(--pink);
+            font-weight: 700
+        }
+
+        /* visual panel */
+        .contact-visual {
+            position: relative;
+            background: linear-gradient(160deg, var(--dark), var(--dark-2));
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            aspect-ratio: 1168 / 1347;
+            width: 100%;
+        }
+
+        .contact-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 10px 16px 10px 12px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            box-shadow: 0 16px 34px rgba(0, 0, 0, .18);
+            z-index: 3;
+        }
+
+        .contact-badge .badge-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            background: var(--pink);
+            display: grid;
+            place-items: center;
+            flex: none;
+            padding: 4px;
+        }
+
+        .contact-badge .badge-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .contact-badge span:last-child {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--ink)
+        }
+
+        .contact-visual-note {
+            text-align: center;
+            color: var(--muted);
+            font-size: 9.5px;
+            margin-top: 16px
+        }
+
+        /* reveal-in animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .6s ease, transform .6s ease
+        }
+
+        .reveal.in-view {
+            opacity: 1;
+            transform: none
+        }
+
+        /* footer */
+        .footer {
+            margin-top: 82px;
+            background: var(--dark);
+            color: #fff;
+            border-radius: 30px 30px 0 0;
+            padding: 56px 0 24px
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 1.7fr 1fr 1fr 1fr;
+            gap: 34px
+        }
+
+        .footer .brand {
+            color: #fff;
+            margin-bottom: 10px
+        }
+
+        .footer p,
+        .footer a {
+            color: #9b97a1;
+            font-size: 9.5px
+        }
+
+        .footer strong {
+            display: block;
+            font-size: 10px;
+            margin-bottom: 10px;
+            color: #fff
+        }
+
+        .footer-inner>div:not(:first-child) {
+            display: flex;
+            flex-direction: column;
+            gap: 6px
+        }
+
+        .footer-inner a:hover {
+            color: #fff
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #2a2730;
+            margin-top: 35px;
+            padding-top: 18px;
+            color: #74717b;
+            font-size: 8.5px;
+            text-align: center
+        }
+
+        @media(max-width:920px) {
+            .nav {
+                display: none
+            }
+
+            .menu-btn {
+                display: block;
+                margin-right: auto
+            }
+
+            .mobile-drawer {
+                display: none
+            }
+
+            .topbar.open .mobile-drawer {
+                display: grid;
+                gap: 2px;
+                padding: 10px 10px 16px;
+            }
+
+            .topbar-inner {
+                min-height: 72px;
+                gap: 12px;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1.6fr 1fr 1fr
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr
+            }
+
+            .contact-visual {
+                order: -1;
+                aspect-ratio: 1168 / 1347;
+            }
+        }
+
+        @media(max-width:650px) {
+            .container {
+                width: min(100% - 30px, 640px)
+            }
+
+            .topbar {
+                width: min(100% - 24px, 640px);
+                border-radius: 26px;
+                padding: 0 10px;
+                top: 8px;
+                margin-top: 8px;
+            }
+
+            .topbar-inner {
+                min-height: 66px;
+                padding: 0 2px;
+            }
+
+            .brand {
+                font-size: 14px;
+            }
+
+            .brand-mark {
+                width: 28px;
+                height: 28px;
+                border-radius: 9px;
+            }
+
+            .nav-cta {
+                padding: 10px 14px;
+                font-size: 10px;
+                border-radius: 14px;
+            }
+
+            .menu-btn {
+                width: 42px;
+                height: 42px;
+                border-radius: 13px;
+                font-size: 18px;
+            }
+
+            .section-space {
+                padding: 82px 0
+            }
+
+            .contact-hero {
+                padding-top: 46px
+            }
+
+            .contact-hero h1 {
+                font-size: 25px
+            }
+
+            .footer {
+                margin-top: 58px
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .footer-inner>div:first-child {
+                grid-column: 1/-1
+            }
+
+            .contact-badge {
+                top: 14px;
+                right: 14px;
+                padding: 6px 12px 6px 10px;
+            }
+
+            .contact-badge span:last-child {
+                font-size: 10px;
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important
+            }
+
+            * {
+                transition: none !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar" id="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="index.html" aria-label="بابل پلنر"><span class="brand-mark"><span></span></span>بابل
+                پلنر</a>
+            <nav class="nav" aria-label="ناوبری اصلی">
+                <a href="index.html#features">امکانات</a>
+                <a href="about us.html">درباره ما</a>
+              <a href="advertisement.html">تبلیغات</a>
+                <a href="index.html#reviews">نظرات</a>
+                <a href="privacy.html">حریم خصوصی</a>
+                <a href="contact.html" class="active">تماس با ما</a>
+            </nav>
+            <a class="nav-cta" href="index.html#download">دانلود رایگان</a>
+            <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileDrawer"
+                aria-label="باز کردن منو">☰</button>
+        </div>
+        <nav class="mobile-drawer" id="mobileDrawer" aria-label="ناوبری موبایل">
+            <a href="index.html#features">امکانات</a>
+            <a href="about us.html">درباره ما</a>
+        <a href="advertisement.html">تبلیغات در بابل پلنر</a>
+            <a href="index.html#reviews">نظرات کاربران</a>
+            <a href="privacy.html">حریم خصوصی</a>
+            <a href="contact.html">تماس با ما</a>
+            <a href="index.html#download">دانلود رایگان</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <span class="eyebrow">GET IN TOUCH</span>
+                <h1>سوالی داری؟ <strong>بیا حرف بزنیم.</strong></h1>
+                <p>هر سوالی درباره‌ی برنامه داری یا می‌خوای درباره‌ی همکاری تبلیغاتی صحبت کنی، از یکی از راه‌های
+                    زیر باهامون در ارتباط باش.</p>
+            </div>
+        </section>
+
+        <section class="section-space" style="padding-top:48px">
+            <div class="container contact-grid">
+                <div class="reveal">
+                    <div class="contact-group">
+                        <span class="contact-group-label">پشتیبانی برنامه</span>
+                        <div class="contact-list">
+                            <a class="contact-row is-link" href="https://ble.ir/bubblestudio" target="_blank"
+                                rel="noopener">
+                                <span class="row-top">بله <span class="row-icon">
+                                        <img src="bale.png" alt="بله" />
+                                    </span></span>
+                                <span class="row-value"><span dir="ltr">@bubblestudio</span></span>
+                            </a>
+                            <div class="contact-row">
+                                <span class="row-top">تلگرام <span class="row-icon">
+                                        <img src="assets/telegram.png" alt="تلگرام" />
+                                    </span></span>
+                                <span class="row-value">به‌زودی...</span>
+                            </div>
+                            <a class="contact-row is-link" href="mailto:support@bubbleplanner.ir">
+                                <span class="row-top">ایمیل <span class="row-icon">
+                                        <img src="assets/email.png" alt="ایمیل" />
+                                    </span></span>
+                                <span class="row-value"><span dir="ltr">support@pingopin.ir</span></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-group">
+                        <span class="contact-group-label">پشتیبانی تبلیغات و فروش</span>
+                        <div class="contact-list">
+                            <a class="contact-row is-link" href="https://t.me/bubbleplanner_ads" target="_blank"
+                                rel="noopener">
+                                <span class="row-top">تلگرام <span class="row-icon">
+                                        <img src="assets/telegram.png" alt="تلگرام" />
+                                    </span></span>
+                                <span class="row-value"><span dir="ltr">**********</span></span>
+                            </a>
+                            <a class="contact-row is-link" href="mailto:ads@bubbleplanner.ir">
+                                <span class="row-top">ایمیل <span class="row-icon">
+                                        <img src="assets/email.png" alt="ایمیل" />
+                                    </span></span>
+                                <span class="row-value"><span dir="ltr">********</span></span>
+                            </a>
+                            <a class="contact-row is-link" href="tel:+989116940787">
+                                <span class="row-top">شماره تماس <span class="row-icon">
+                                        <img src="assets/number.png" alt="شماره تماس" />
+                                    </span></span>
+                                <span class="row-value"><span dir="ltr">۰۰۰۰۰۰۰۰۰</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <div class="contact-visual">
+                        <div class="contact-badge">
+                            <span class="badge-icon">
+                                <img src="bale.png" alt="پشتیبانی" />
+                            </span>
+                            <span>پشتیبانی بابل پلنر</span>
+                        </div>
+                        <img src="assets/supportman.png" alt="تیم پشتیبانی بابل پلنر" />
+                    </div>
+                    <p class="contact-visual-note">هر سوالی داشتی، پیامت رو بفرست 🫧</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div><a class="brand" href="index.html"><span class="brand-mark"><span></span></span>بابل پلنر</a>
+                <p>برنامه‌ریزی، اما گوگولی! 🫧</p>
+            </div>
+            <div><strong>بابل پلنر</strong><a href="index.html#features">امکانات</a><a href="about us.html">درباره
+                    ما</a><a href="index.html#reviews">نظرات</a></div>
+            <div><strong>بخش‌ها</strong><a href="index.html#task-management">تسک‌ها</a><a
+                    href="index.html#bubble-note">بابل‌نوت</a><a href="index.html#magazine">مجله حباب</a><a
+                    href="index.html#relaxation">اتاق آرامش</a></div>
+            <div><strong>همکاری</strong><a href="advertisement.html">تبلیغات در بابل پلنر</a><a href="privacy.html">حریم
+                    خصوصی</a><a href="contact.html">تماس با ما</a></div>
+        </div>
+        <div class="container footer-bottom">© ۱۴۰۵ بابل پلنر · تمامی حقوق محفوظ است</div>
+    </footer>
+
+    <script>
+        (function () {
+            'use strict';
+            const topbar = document.getElementById('topbar');
+            const menu = document.getElementById('menuBtn');
+            menu?.addEventListener('click', () => {
+                const open = topbar.classList.toggle('open');
+                menu.setAttribute('aria-expanded', String(open));
+                menu.textContent = open ? '×' : '☰';
+            });
+            document.querySelectorAll('.mobile-drawer a').forEach(a => a.addEventListener('click', () => {
+                topbar.classList.remove('open');
+                menu.setAttribute('aria-expanded', 'false');
+                menu.textContent = '☰';
+            }));
+
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const els = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window && !reduce) {
+                const io = new IntersectionObserver(entries =>
+                    entries.forEach(e => {
+                        if (e.isIntersecting) {
+                            e.target.classList.add('in-view');
+                            io.unobserve(e.target);
+                        }
+                    }), { threshold: .1, rootMargin: '0px 0px -30px' });
+                els.forEach(el => io.observe(el));
+            } else { els.forEach(el => el.classList.add('in-view')); }
+        })();
+    </script>
+</body>
+
+</html>
