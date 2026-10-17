@@ -1,0 +1,3062 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#FF6690" />
+
+
+    <title>بابل پلنر | برنامه‌ریزی، اما گوگولی!</title>
+    <meta name="description"
+        content="بابل پلنر؛ برنامه‌ریزی، ساخت عادت‌های خوب، بابل‌نوت، مجله حباب امشب و اتاق آرامش. دانلود رایگان و تجربه یک برنامه‌ریزی فانتزی." />
+    <meta name="keywords"
+        content="بابل پلنر, برنامه ریزی روزانه, عادت سازی, یادداشت, بابل نوت, اتاق آرامش, مجله حباب, اپلیکیشن برنامه ریزی فارسی" />
+    <meta name="author" content="بابل پلنر" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+
+    <link rel="canonical" href="https://bubbleplanner.ir/" />
+
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="بابل پلنر" />
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:title" content="بابل پلنر | برنامه‌ریزی، اما گوگولی!" />
+    <meta property="og:description"
+        content="بابل پلنر؛ برنامه‌ریزی، ساخت عادت‌های خوب، بابل‌نوت، مجله حباب امشب و اتاق آرامش." />
+    <meta property="og:url" content="https://bubbleplanner.ir/" />
+    <meta property="og:image" content="https://bubbleplanner.ir/logo.png" />
+
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="بابل پلنر | برنامه‌ریزی، اما گوگولی!" />
+    <meta name="twitter:description"
+        content="بابل پلنر؛ برنامه‌ریزی، ساخت عادت‌های خوب، بابل‌نوت، مجله حباب امشب و اتاق آرامش." />
+    <meta name="twitter:image" content="https://bubbleplanner.ir/logo.png" />
+    <link rel="icon" type="image/png" href="logo.png" />
+
+
+    <link rel="apple-touch-icon" href="logo.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://cafebazaar.ir" />
+    <link rel="preconnect" href="https://cafebazaar.ir" />
+    <link rel="dns-prefetch" href="//cafebazaar.ir" />
+
+
+    <link rel="preload" href="fonts/Estedad-Medium.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="fonts/Estedad-ExtraBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <link rel="preload" href="phone.gif" as="image" fetchpriority="high" />
+
+    <style>
+        @font-face {
+            font-family: Estedad;
+            src: url('fonts/Estedad-Medium.ttf') format('truetype'), url('Estedad-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: Estedad;
+            src: url('fonts/Estedad-ExtraBold.ttf') format('truetype'), url('Estedad-ExtraBold.ttf') format('truetype');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --pink: #FF6690;
+            --pink-deep: #ed4f7c;
+            --pink-soft: #fff1f5;
+            --pink-soft-2: #ffe5ed;
+            --ink: #202653;
+            --ink-soft: #626880;
+            --muted: #8d92a8;
+            --line: #eceef4;
+            --surface: #f8f9fb;
+            --dark: #15141a;
+            --dark-2: #1d1b23;
+            --mint: #72d5a1;
+            --lav: #8b7be8;
+            --white: #fff;
+            --shadow: 0 28px 70px rgba(31, 35, 74, .07);
+            --shadow-pink: 0 24px 65px rgba(255, 102, 144, .18);
+            --radius-xl: 30px;
+            --radius-lg: 24px;
+            --radius-md: 18px;
+            --radius-sm: 13px;
+
+            /* fluid tokens */
+            --gutter: clamp(16px, 4.4vw, 48px);
+            --section-y: clamp(76px, 9vw, 112px);
+            --topbar-h: 80px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            color: var(--ink);
+            font-family: Estedad, Tahoma, sans-serif;
+            font-weight: 500;
+            line-height: 1.9;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        ::selection {
+            background: var(--pink);
+            color: #fff;
+        }
+
+        /* keep anchored sections clear of the sticky bar */
+        section[id] {
+            scroll-margin-top: calc(var(--topbar-h) + 34px);
+        }
+
+        .container {
+            width: min(1080px, calc(100% - var(--gutter) * 2));
+            margin-inline: auto;
+        }
+
+        /* ===== Top Navigation ===== */
+        .topbar {
+            position: sticky;
+            top: 14px;
+            z-index: 100;
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-radius: 34px;
+            border: 1px solid rgba(232, 235, 243, .7);
+            box-shadow: 0 10px 32px rgba(31, 35, 74, .08), 0 2px 8px rgba(31, 35, 74, .04);
+            width: min(1080px, calc(100% - var(--gutter) * 2));
+            margin: 14px auto 0;
+            padding: 0 clamp(8px, 1.4vw, 16px);
+            transition: box-shadow .3s ease, border-color .3s ease, transform .2s ease;
+        }
+
+        .topbar:hover {
+            box-shadow: 0 14px 40px rgba(31, 35, 74, .12), 0 4px 12px rgba(255, 102, 144, .06);
+            border-color: rgba(255, 102, 144, .18);
+        }
+
+        .topbar-inner {
+            min-height: var(--topbar-h);
+            display: flex;
+            align-items: center;
+            gap: clamp(10px, 2vw, 24px);
+            padding: 0 4px;
+            width: 100%;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 17px;
+            font-weight: 800;
+            white-space: nowrap;
+            color: var(--ink);
+            transition: color .2s;
+            flex: none;
+        }
+
+        .brand:hover {
+            color: var(--pink);
+        }
+
+        .brand-mark {
+            width: 32px;
+            height: 32px;
+            border-radius: 11px;
+            background: linear-gradient(145deg, #ff83a6, #ff5d88);
+            display: grid;
+            place-items: center;
+            box-shadow: 0 8px 20px rgba(255, 102, 144, .3);
+            transition: transform .25s ease, box-shadow .25s ease;
+            flex: none;
+        }
+
+        .brand:hover .brand-mark {
+            transform: rotate(-6deg) scale(1.06);
+            box-shadow: 0 12px 28px rgba(255, 102, 144, .4);
+        }
+
+        .brand-mark span {
+            width: 12px;
+            height: 12px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .brand-mark span:after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #fff;
+            left: 2px;
+            top: 2px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2px;
+            margin-inline: auto;
+            color: #555b74;
+            font-size: 12px;
+            align-items: center;
+        }
+
+        .nav a {
+            padding: 8px clamp(8px, 1.2vw, 16px);
+            border-radius: 16px;
+            transition: background .2s, color .2s;
+            font-weight: 500;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav a:hover {
+            background: var(--pink-soft);
+            color: var(--pink);
+        }
+
+        .nav-cta {
+            border-radius: 18px;
+            padding: 12px clamp(14px, 1.8vw, 22px);
+            background: var(--pink);
+            color: #fff;
+            font-size: 11px;
+            box-shadow: 0 8px 24px rgba(255, 102, 144, .25);
+            transition: .25s;
+            white-space: nowrap;
+            font-weight: 800;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            flex: none;
+        }
+
+        .nav-cta:hover {
+            background: var(--pink-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(255, 102, 144, .35);
+        }
+
+        .menu-btn {
+            display: none;
+            border: 0;
+            background: var(--pink-soft);
+            color: var(--pink);
+            width: 46px;
+            height: 46px;
+            border-radius: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: .2s;
+            flex: none;
+            line-height: 1;
+            place-items: center;
+        }
+
+        .menu-btn:hover {
+            background: var(--pink-soft-2);
+            transform: scale(1.06);
+        }
+
+        .mobile-drawer {
+            display: none;
+            padding: 10px 12px 16px;
+            border-top: 1px solid rgba(232, 235, 243, .6);
+            border-radius: 0 0 28px 28px;
+            max-height: min(72vh, 520px);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .topbar.open .mobile-drawer {
+            display: grid;
+            gap: 2px;
+        }
+
+        .mobile-drawer a {
+            display: block;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 11px;
+            color: #666b84;
+            transition: background .2s, color .2s;
+        }
+
+        .mobile-drawer a:hover,
+        .mobile-drawer a:focus-visible {
+            background: var(--pink-soft);
+            color: var(--pink);
+        }
+
+        /* ===== Primitives ===== */
+        .section-space {
+            padding: var(--section-y) 0;
+        }
+
+        .section-muted {
+            background: linear-gradient(180deg, #fbfbfd, #fff);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--pink);
+            font-size: 10px;
+            letter-spacing: .5px;
+            font-weight: 800;
+        }
+
+        .eyebrow-dark {
+            color: #ff91ac;
+        }
+
+        .section-heading {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 30px;
+            align-items: end;
+            margin-bottom: 42px;
+        }
+
+        .section-heading.centered {
+            grid-template-columns: 1fr;
+            text-align: center;
+            justify-items: center;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(22px, 2.6vw, 28px);
+            line-height: 1.6;
+            margin: 7px 0 0;
+            font-weight: 500;
+            letter-spacing: -.2px;
+        }
+
+        .section-heading h2 strong {
+            font-weight: 800;
+        }
+
+        .section-heading p {
+            font-size: 11.5px;
+            line-height: 2.15;
+            color: var(--muted);
+            max-width: 490px;
+            margin: 0 0 3px;
+        }
+
+        .section-heading.centered p {
+            margin: 10px auto 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 18px;
+            font-size: 11px;
+            gap: 8px;
+            border-radius: 14px;
+            font-weight: 800;
+            transition: .25s;
+            border: 1px solid transparent;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--pink);
+            color: #fff;
+            box-shadow: 0 14px 34px rgba(255, 102, 144, .22);
+        }
+
+        .btn-primary:hover {
+            background: var(--pink-deep);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            background: #fff;
+            border: 1px solid var(--line);
+            color: var(--ink);
+        }
+
+        .btn-ghost:hover {
+            border-color: #ffd2df;
+            color: var(--pink);
+            transform: translateY(-2px);
+        }
+
+        .pill {
+            padding: 8px 10px;
+            border: 1px solid #f0f1f6;
+            border-radius: 12px;
+            background: #fbfbfc;
+            color: var(--ink);
+            font-size: 9px;
+            font-weight: 800;
+        }
+
+        /* Hero */
+        .hero {
+            padding: clamp(48px, 7vw, 78px) 0 clamp(60px, 8.4vw, 90px);
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: .92fr 1.08fr;
+            gap: clamp(32px, 5vw, 56px);
+            align-items: center;
+        }
+
+        .hero-copy .hero-eyebrow {
+            margin-bottom: 8px;
+        }
+
+        .hero h1 {
+            font-size: clamp(30px, 3.9vw, 43px);
+            line-height: 1.5;
+            letter-spacing: -.6px;
+            margin: 10px 0 18px;
+            font-weight: 500;
+        }
+
+        .hero h1 strong {
+            font-weight: 800;
+        }
+
+        .hero h1 .accent {
+            color: var(--pink);
+        }
+
+        .hero-copy>p {
+            font-size: 13px;
+            line-height: 2.2;
+            color: var(--muted);
+            max-width: 555px;
+            margin: 0;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 27px;
+            flex-wrap: wrap;
+        }
+
+        .hero-note {
+            margin-top: 17px;
+            color: #9aa0b5;
+            font-size: 9.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #62d694;
+            box-shadow: 0 0 0 5px #ebfaf1;
+        }
+
+        .hero-visual {
+            position: relative;
+            min-width: 0;
+        }
+
+        .hero-frame {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            padding: 12px;
+            box-shadow: var(--shadow);
+            transform: rotate(-.6deg);
+        }
+
+        .frame-topline {
+            display: flex;
+            justify-content: space-between;
+            color: #9297aa;
+            font-size: 9px;
+            padding: 4px 6px 11px;
+            gap: 10px;
+        }
+
+        .hero-media {
+            position: relative;
+            min-height: 430px;
+            border-radius: 21px;
+            overflow: hidden;
+            background: linear-gradient(145deg, #fff1f5, #f7f5fb);
+            border: 1px solid #f0edf4;
+            display: grid;
+            place-items: center;
+        }
+
+        .hero-media img {
+            width: 82%;
+            max-width: 420px;
+            height: auto;
+            filter: drop-shadow(0 25px 35px rgba(31, 35, 74, .18));
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-fallback {
+            display: none;
+            position: absolute;
+            inset: 0;
+            place-items: center;
+        }
+
+        .phone-fallback {
+            width: 210px;
+            height: 390px;
+            border-radius: 34px;
+            background: #fff;
+            border: 8px solid #252438;
+            box-shadow: 0 28px 55px rgba(31, 35, 74, .17);
+            padding: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phone-fallback:before {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 16px;
+            border-radius: 20px;
+            background: #252438;
+        }
+
+        .phone-fallback-top {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 9px;
+            color: var(--pink);
+            font-weight: 800;
+        }
+
+        .phone-fallback-card {
+            margin-top: 14px;
+            border-radius: 16px;
+            background: var(--pink-soft);
+            padding: 14px;
+        }
+
+        .phone-fallback-card b {
+            font-size: 12px;
+        }
+
+        .phone-fallback-task {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: 9px;
+            font-size: 9px;
+        }
+
+        .phone-fallback-task i {
+            width: 9px;
+            height: 9px;
+            border-radius: 3px;
+            background: var(--pink);
+            display: block;
+        }
+
+        .hero-decoration {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .floating-badge {
+            position: absolute;
+            padding: 8px 12px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            box-shadow: 0 12px 32px rgba(31, 35, 74, .08);
+            font-size: 9px;
+            font-weight: 800;
+            color: var(--ink);
+            white-space: nowrap;
+        }
+
+        .floating-badge.b1 {
+            top: 18%;
+            right: -5%;
+        }
+
+        .floating-badge.b2 {
+            bottom: 18%;
+            left: -5%;
+        }
+
+        .floating-badge.b3 {
+            top: 50%;
+            left: -7%;
+            background: var(--pink);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .feature-card {
+            position: relative;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 20px;
+            min-height: 188px;
+            overflow: hidden;
+            transition: .3s;
+            min-width: 0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffd3df;
+            box-shadow: var(--shadow-pink);
+        }
+
+        .feature-number {
+            position: absolute;
+            left: 16px;
+            top: 15px;
+            color: #d5d8e3;
+            font-size: 9px;
+            font-weight: 800;
+        }
+
+        .feature-icon {
+            width: 47px;
+            height: 47px;
+            border-radius: 15px;
+            background: var(--pink-soft);
+            color: var(--pink);
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            background: #f2efff;
+            color: #7967d9;
+        }
+
+        .feature-card:nth-child(3) .feature-icon {
+            background: #eefbf5;
+            color: #3ca874;
+        }
+
+        .feature-card:nth-child(4) .feature-icon {
+            background: #fff6ea;
+            color: #df9652;
+        }
+
+        .feature-card h3 {
+            margin: 0 0 7px;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .feature-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 2.05;
+        }
+
+        .feature-foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 9.5px;
+        }
+
+        .feature-foot strong {
+            color: var(--pink);
+            font-weight: 800;
+        }
+
+        .all-features {
+            margin-top: 28px;
+            border: 1px dashed #f2b6c8;
+            border-radius: 22px;
+            padding: 15px 18px;
+            background: linear-gradient(110deg, #fff7fa, #fff);
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .all-features strong {
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .all-features span {
+            font-size: 9px;
+            color: var(--muted);
+        }
+
+        .all-features>div {
+            min-width: 0;
+            flex: 1 1 240px;
+        }
+
+        /* App feature sections */
+        .product-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-section.light {
+            background: #fff;
+        }
+
+        .product-section.soft {
+            background: #fbfbfd;
+        }
+
+        .product-section.pink {
+            background: linear-gradient(180deg, #fff1f5, #fff);
+        }
+
+        .product-section.dark {
+            background: var(--dark);
+            color: #fff;
+        }
+
+        .product-section.dark:before {
+            content: "";
+            position: absolute;
+            inset: auto auto -140px -120px;
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            background: rgba(255, 102, 144, .11);
+            filter: blur(15px);
+            pointer-events: none;
+        }
+
+        .product-row {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: clamp(30px, 5vw, 56px);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-row.reverse {
+            grid-template-columns: 1.1fr .9fr;
+        }
+
+        .product-row.reverse .product-visual {
+            order: 2;
+        }
+
+        .product-content {
+            min-width: 0;
+        }
+
+        .product-content .mini-label {
+            display: block;
+            color: var(--pink);
+            font-size: 10px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .product-content h2 {
+            font-size: clamp(22px, 2.7vw, 29px);
+            line-height: 1.55;
+            margin: 0 0 12px;
+            font-weight: 500;
+        }
+
+        .product-content h2 strong {
+            font-weight: 800;
+        }
+
+        .product-content p {
+            font-size: 11.5px;
+            line-height: 2.15;
+            color: var(--muted);
+            max-width: 510px;
+            margin: 0 0 19px;
+        }
+
+        .product-section.dark .product-content p {
+            color: #aaa5b0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 9px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 10.5px;
+            font-weight: 800;
+        }
+
+        .feature-list .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--pink);
+            box-shadow: 0 0 0 5px rgba(255, 102, 144, .1);
+            flex: none;
+        }
+
+        .product-visual {
+            min-height: 320px;
+            display: grid;
+            place-items: center;
+            min-width: 0;
+        }
+
+        .product-visual img.widget-shot {
+            width: min(420px, 100%);
+            height: auto;
+            border-radius: 26px;
+            box-shadow: var(--shadow);
+            object-fit: contain;
+        }
+
+        .visual-card {
+            width: min(420px, 100%);
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 26px;
+            padding: 18px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .dark .visual-card {
+            background: linear-gradient(145deg, #211e27, #19171d);
+            border-color: #302c36;
+        }
+
+        .task-board {
+            display: grid;
+            gap: 10px;
+        }
+
+        .task-board .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fbfbfd;
+            border: 1px solid #eef0f5;
+            border-radius: 15px;
+            padding: 13px 14px;
+            font-size: 10px;
+            font-weight: 800;
+            gap: 10px;
+        }
+
+        .task-board .task.done {
+            background: #eefbf5;
+            border-color: #dbf3e7;
+        }
+
+        .task-board .tag {
+            padding: 5px 9px;
+            border-radius: 10px;
+            background: var(--pink-soft);
+            color: var(--pink);
+            font-size: 8px;
+            flex: none;
+        }
+
+        .task-board .task.done .tag {
+            background: #dff6e9;
+            color: #33a46d;
+        }
+
+        .note-board {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .note-tile {
+            min-height: 112px;
+            border-radius: 18px;
+            padding: 16px;
+            font-size: 10px;
+            font-weight: 800;
+            box-shadow: 0 12px 24px rgba(31, 35, 74, .06);
+        }
+
+        .note-tile.pink {
+            background: #ffe4ec;
+        }
+
+        .note-tile.yellow {
+            background: #fff2d9;
+        }
+
+        .note-tile.purple {
+            background: #eeeaff;
+        }
+
+        .note-tile.green {
+            background: #e9f8ef;
+        }
+
+        .magazine-card {
+            position: relative;
+            min-height: 310px;
+            width: min(420px, 100%);
+            border-radius: 23px;
+            overflow: hidden;
+            background: linear-gradient(160deg, #28212d, #141218);
+            border: 1px solid #302b37;
+            padding: 26px;
+            color: #fff;
+        }
+
+        .magazine-top {
+            display: flex;
+            justify-content: space-between;
+            color: #ff95ae;
+            font-size: 9px;
+            font-weight: 800;
+            gap: 10px;
+        }
+
+        .magazine-card .magazine-title {
+            font-size: 26px;
+            line-height: 1.5;
+            margin: 52px 0 7px;
+        }
+
+        .magazine-card p {
+            font-size: 10px;
+            color: #bdb6c6;
+            max-width: 280px;
+        }
+
+        .magazine-card .moon {
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            left: 28px;
+            bottom: 28px;
+            background: radial-gradient(circle at 35% 30%, #fff5d4, #c8a98a 35%, #5e4a64 74%, transparent 75%);
+            box-shadow: 0 0 60px rgba(255, 201, 139, .15);
+            pointer-events: none;
+        }
+
+        .calm-card {
+            width: min(420px, 100%);
+            height: 320px;
+            border-radius: 26px;
+            background: linear-gradient(160deg, #eefbf5, #fff);
+            border: 1px solid #dff1e7;
+            display: grid;
+            place-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        .breath {
+            width: 178px;
+            height: 178px;
+            border-radius: 50%;
+            border: 2px solid rgba(79, 175, 130, .3);
+            display: grid;
+            place-items: center;
+            position: relative;
+        }
+
+        .breath:before,
+        .breath:after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(79, 175, 130, .18);
+            inset: 18px;
+        }
+
+        .breath:after {
+            inset: 38px;
+        }
+
+        .breath span {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #fff;
+            box-shadow: 0 12px 25px rgba(52, 139, 95, .12);
+            font-size: 30px;
+        }
+
+        /* =========================================================
+           ===== Gallery Ring (post1.png … post4.png) ==============
+           ========================================================= */
+        .gallery-section {
+            background:
+                radial-gradient(120% 85% at 50% -10%, #fff2f7 0%, rgba(255, 255, 255, 0) 62%),
+                linear-gradient(180deg, #fff, #fbfbfd);
+        }
+
+        .ring-wrap {
+            position: relative;
+            width: min(1080px, calc(100% - var(--gutter) * 2));
+            margin-inline: auto;
+            touch-action: pan-y;
+            -webkit-user-select: none;
+            user-select: none;
+            cursor: grab;
+            outline: none;
+        }
+
+        .ring-wrap.is-dragging {
+            cursor: grabbing;
+        }
+
+        .ring-wrap:focus-visible {
+            box-shadow: 0 0 0 3px rgba(255, 102, 144, .22);
+            border-radius: 26px;
+        }
+
+        .ring-stage {
+            position: relative;
+        }
+
+        /* --- fallback: a plain scrollable row until JS takes over --- */
+        .ring:not(.is-live) {
+            display: flex;
+            gap: 26px;
+            overflow-x: auto;
+            padding: 14px 4px 24px;
+            scrollbar-width: thin;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .ring:not(.is-live) .slot {
+            flex: none;
+        }
+
+        /* --- live ring --- */
+        .ring.is-live {
+            position: relative;
+            height: clamp(340px, 56vw, 470px);
+        }
+
+        .slot {
+            width: clamp(180px, 26vw, 300px);
+            perspective: 900px;
+        }
+
+        .ring.is-live .slot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+
+        /* three motions, three elements, one transform each */
+        .float {
+            transform-style: preserve-3d;
+            animation: cardFloat 6s ease-in-out infinite;
+            animation-delay: var(--d, 0s);
+        }
+
+        @keyframes cardFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .card {
+            margin: 0;
+            position: relative;
+            aspect-ratio: 3.5 / 5;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #f0eef5;
+            box-shadow: 0 30px 62px rgba(31, 35, 74, .16);
+            /* it sinks, it does not lift */
+            transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+            transition: transform .3s cubic-bezier(.22, .61, .36, 1), box-shadow .3s ease;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+            -webkit-user-drag: none;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, 0) 42%);
+            pointer-events: none;
+        }
+
+        .ring-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--ink);
+            font-size: 19px;
+            line-height: 1;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            z-index: 300;
+            box-shadow: 0 12px 28px rgba(31, 35, 74, .1);
+            transition: background .22s, color .22s, border-color .22s, transform .22s;
+        }
+
+        .ring-btn:hover {
+            background: var(--pink);
+            color: #fff;
+            border-color: transparent;
+            transform: translateY(-50%) scale(1.07);
+        }
+
+        .ring-btn.next {
+            left: 0;
+        }
+
+        .ring-btn.prev {
+            right: 0;
+        }
+
+        .ring-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .ring-dot {
+            width: 8px;
+            height: 8px;
+            padding: 0;
+            border: 0;
+            border-radius: 999px;
+            background: #e4e7ef;
+            cursor: pointer;
+            transition: width .28s ease, background .28s ease;
+        }
+
+        .ring-dot:hover {
+            background: #ffc2d3;
+        }
+
+        .ring-dot.active {
+            width: 26px;
+            background: var(--pink);
+        }
+
+        .ring-hint {
+            text-align: center;
+            color: var(--muted);
+            font-size: 9.5px;
+            margin: 12px 0 0;
+        }
+
+        /* About */
+        .about {
+            background: #fbfbfd;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 18px;
+        }
+
+        .about-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 16px 45px rgba(31, 35, 74, .035);
+            min-width: 0;
+        }
+
+        .about-card h3 {
+            font-size: 17px;
+            margin: 4px 0 9px;
+            font-weight: 800;
+        }
+
+        .about-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 10.8px;
+            line-height: 2.15;
+        }
+
+        .about-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .metric {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 22px;
+            min-width: 0;
+        }
+
+        .metric strong {
+            display: block;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--pink);
+        }
+
+        .metric span {
+            display: block;
+            color: var(--muted);
+            font-size: 9.5px;
+            margin-top: 2px;
+        }
+
+        /* Reviews */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .review-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 21px;
+            padding: 20px;
+            min-height: 176px;
+            transition: .25s;
+            min-width: 0;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            border-color: #ffd3df;
+            box-shadow: var(--shadow-pink);
+        }
+
+        .stars {
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .review-text {
+            font-size: 10.4px;
+            line-height: 2;
+            margin: 12px 0 16px;
+            min-height: 52px;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--pink-soft);
+            display: grid;
+            place-items: center;
+            color: var(--pink);
+            font-weight: 800;
+            font-size: 12px;
+            flex: none;
+        }
+
+        .reviewer strong {
+            font-size: 9.5px;
+        }
+
+        .reviewer span {
+            display: block;
+            color: var(--muted);
+            font-size: 8.5px;
+            margin-top: 1px;
+        }
+
+        .rating-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 24px;
+        }
+
+        .rating-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 9px 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .rating-pill b {
+            font-size: 12px;
+        }
+
+        .rating-pill span {
+            font-size: 8.8px;
+            color: var(--muted);
+        }
+
+        /* Download */
+        .download-wrap {
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px;
+            background: linear-gradient(115deg, #fff1f5 0%, #fff 55%, #f6f2ff 100%);
+            border: 1px solid #ffd9e4;
+            padding: clamp(28px, 3.6vw, 42px) clamp(24px, 3.8vw, 44px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .download-wrap>div:first-child {
+            min-width: 0;
+            flex: 1 1 320px;
+        }
+
+        .download-wrap h2 {
+            font-size: clamp(21px, 2.4vw, 25px);
+            margin: 0 0 8px;
+            font-weight: 800;
+        }
+
+        .download-wrap p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 10.8px;
+            max-width: 500px;
+        }
+
+        .download-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: none;
+            flex-wrap: wrap;
+        }
+
+        .bazaar-badge-link {
+            display: inline-flex;
+        }
+
+        .bazaar-badge-img {
+            height: 54px;
+            width: auto;
+            border-radius: 0;
+        }
+
+        .bazaar-fallback {
+            display: none;
+            background: #1c1830;
+            color: #fff;
+            border-radius: 14px;
+            padding: 13px 16px;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        /* Advertising bridge */
+        .ad-bridge {
+            padding-top: 28px;
+        }
+
+        .ad-panel {
+            background: linear-gradient(160deg, #fff5f8, #fff 55%, #f7f4ff);
+            border: 1px solid #ffd6e2;
+            border-radius: 28px;
+            padding: clamp(26px, 3.4vw, 38px) clamp(22px, 3.6vw, 40px);
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .ad-panel>div:first-child {
+            min-width: 0;
+        }
+
+        .ad-panel .eyebrow {
+            color: var(--pink);
+        }
+
+        .ad-panel h2 {
+            font-size: clamp(21px, 2.5vw, 27px);
+            line-height: 1.6;
+            margin: 7px 0 9px;
+            font-weight: 500;
+        }
+
+        .ad-panel h2 strong {
+            font-weight: 800;
+        }
+
+        .ad-panel p {
+            color: var(--muted);
+            font-size: 10.7px;
+            line-height: 2.15;
+            margin: 0 0 15px;
+        }
+
+        .ad-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .ad-point {
+            background: #fff;
+            border: 1px solid #f0dfe6;
+            border-radius: 999px;
+            padding: 8px 11px;
+            font-size: 8.8px;
+            font-weight: 800;
+            color: #7a3f54;
+        }
+
+        .ad-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 25px;
+            box-shadow: 0 18px 40px rgba(31, 35, 74, .055);
+            min-width: 0;
+        }
+
+        .ad-card-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            background: var(--pink);
+            color: #fff;
+            font-size: 24px;
+            box-shadow: 0 12px 28px rgba(255, 102, 144, .22);
+            margin-bottom: 15px;
+        }
+
+        .ad-card h3 {
+            font-size: 14px;
+            margin: 0 0 6px;
+            font-weight: 800;
+        }
+
+        .ad-card p {
+            font-size: 9.5px;
+            margin-bottom: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 82px;
+            background: var(--dark);
+            color: #fff;
+            border-radius: 30px 30px 0 0;
+            padding: 56px 0 24px;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 1.7fr 1fr 1fr 1fr;
+            gap: 34px;
+        }
+
+        .footer .brand {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .footer p,
+        .footer a {
+            color: #9b97a1;
+            font-size: 9.5px;
+        }
+
+        .footer strong {
+            display: block;
+            font-size: 10px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .footer-inner>div:not(:first-child) {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 0;
+        }
+
+        .footer-inner a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #2a2730;
+            margin-top: 35px;
+            padding-top: 18px;
+            color: #74717b;
+            font-size: 8.5px;
+            text-align: center;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity .65s ease, transform .65s ease;
+        }
+
+        .reveal.in-view {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* =========================================================
+           ===== RESPONSIVE — layered, mobile-first safe ==========
+           ========================================================= */
+
+        /* ---------- large laptop / small desktop ---------- */
+        @media (max-width: 1180px) {
+
+            .features-grid,
+            .review-grid {
+                gap: 12px;
+            }
+
+            .section-heading {
+                gap: 24px;
+            }
+        }
+
+        /* ---------- tablet landscape ---------- */
+        @media (max-width: 1024px) {
+            .hero-inner {
+                gap: 34px;
+            }
+
+            .product-row,
+            .product-row.reverse {
+                gap: 32px;
+            }
+
+            .floating-badge.b1 {
+                right: 0;
+            }
+
+            .floating-badge.b2 {
+                left: 0;
+            }
+
+            .floating-badge.b3 {
+                left: -1%;
+            }
+
+            .download-wrap {
+                gap: 22px;
+            }
+
+            .footer-inner {
+                gap: 26px;
+            }
+        }
+
+        /* ---------- tablet portrait ---------- */
+        @media (max-width: 920px) {
+            :root {
+                --topbar-h: 72px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .menu-btn {
+                display: grid;
+                margin-right: auto;
+                order: 3;
+            }
+
+            .nav-cta {
+                order: 2;
+            }
+
+            .topbar-inner {
+                gap: 12px;
+            }
+
+            .topbar.open .mobile-drawer {
+                display: grid;
+                gap: 2px;
+                padding: 10px 10px 16px;
+            }
+
+            .hero-inner,
+            .product-row,
+            .product-row.reverse,
+            .ad-panel {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-copy {
+                text-align: center;
+            }
+
+            .hero-copy>p {
+                margin-inline: auto;
+            }
+
+            .hero-actions,
+            .hero-note {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                max-width: 700px;
+                width: 100%;
+                margin-inline: auto;
+            }
+
+            /* safe, non-distorting phone visual on every screen */
+            .hero-media {
+                min-height: 0;
+                height: clamp(300px, 52vw, 440px);
+            }
+
+            .hero-media img {
+                width: 100%;
+                height: 100%;
+                max-width: none;
+                object-fit: contain;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+
+            .section-heading {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 14px;
+                margin-bottom: 34px;
+            }
+
+            .section-heading>p {
+                max-width: 650px;
+            }
+
+            .features-grid,
+            .review-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .product-row.reverse .product-visual {
+                order: 0;
+            }
+
+            .about-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .download-wrap {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .ad-panel {
+                gap: 22px;
+            }
+
+            .footer-inner {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .footer-inner>div:first-child {
+                grid-column: 1 / -1;
+            }
+
+            .review-card {
+                min-height: 0;
+            }
+
+            .review-text {
+                min-height: 0;
+            }
+        }
+
+        /* ---------- large phone / small tablet ---------- */
+        @media (max-width: 768px) {
+
+            .product-row,
+            .product-row.reverse {
+                gap: 26px;
+            }
+
+            .product-content p {
+                max-width: none;
+            }
+
+            .all-features {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .all-features .btn {
+                width: 100%;
+            }
+
+            .download-wrap {
+                padding: 30px 26px;
+            }
+
+            .footer {
+                margin-top: 64px;
+                padding-top: 44px;
+            }
+
+            .feature-card {
+                min-height: 0;
+            }
+
+            .magazine-card {
+                min-height: 280px;
+            }
+
+            .magazine-card .magazine-title {
+                margin-top: 36px;
+            }
+        }
+
+        /* ---------- phone ---------- */
+        @media (max-width: 650px) {
+            :root {
+                --topbar-h: 66px;
+                --section-y: 78px;
+            }
+
+            .container {
+                width: min(100% - 30px, 640px);
+            }
+
+            .topbar {
+                width: min(100% - 24px, 640px);
+                border-radius: 26px;
+                top: 8px;
+                margin-top: 8px;
+                padding: 0 10px;
+            }
+
+            .topbar-inner {
+                padding: 0 2px;
+                gap: 8px;
+            }
+
+            .brand {
+                font-size: 14px;
+                gap: 8px;
+            }
+
+            .brand-mark {
+                width: 28px;
+                height: 28px;
+                border-radius: 9px;
+            }
+
+            .nav-cta {
+                padding: 10px 14px;
+                font-size: 10px;
+                border-radius: 14px;
+            }
+
+            .menu-btn {
+                width: 42px;
+                height: 42px;
+                border-radius: 13px;
+                font-size: 18px;
+            }
+
+            .mobile-drawer {
+                padding: 8px 8px 14px;
+            }
+
+            .mobile-drawer a {
+                padding: 11px 14px;
+                font-size: 12px;
+            }
+
+            /* --- hero --- */
+            .hero {
+                padding-top: 46px;
+            }
+
+            .hero h1 {
+                font-size: 31px;
+                line-height: 1.5;
+                margin: 8px 0 14px;
+            }
+
+            .hero-copy>p {
+                font-size: 12px;
+                line-height: 2.1;
+            }
+
+            .hero-actions {
+                gap: 8px;
+                margin-top: 22px;
+            }
+
+            .hero-actions .btn {
+                flex: 1 1 auto;
+                min-width: 140px;
+            }
+
+            .hero-frame {
+                border-radius: 24px;
+                padding: 10px;
+                transform: none;
+            }
+
+            .frame-topline {
+                font-size: 8.5px;
+                padding: 2px 4px 9px;
+            }
+
+            .hero-media {
+                height: clamp(280px, 76vw, 400px);
+                border-radius: 18px;
+            }
+
+            /* --- typography & spacing --- */
+            .section-heading {
+                margin-bottom: 28px;
+            }
+
+            .section-heading h2 {
+                font-size: 23px;
+            }
+
+            .section-heading p {
+                font-size: 12px;
+                line-height: 2.1;
+            }
+
+            .product-content h2 {
+                font-size: 23px;
+                line-height: 1.55;
+            }
+
+            .product-content p {
+                font-size: 12px;
+                line-height: 2.1;
+            }
+
+            .feature-card p {
+                font-size: 11px;
+                line-height: 2;
+            }
+
+            .review-text {
+                font-size: 11.5px;
+                line-height: 2.05;
+            }
+
+            .about-card p {
+                font-size: 11.5px;
+            }
+
+            .footer p,
+            .footer a {
+                font-size: 10.5px;
+            }
+
+            .footer strong {
+                font-size: 11px;
+            }
+
+            .feature-list li {
+                font-size: 11px;
+            }
+
+            /* --- grids → single column --- */
+            .features-grid,
+            .review-grid,
+            .about-metrics,
+            .note-board {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .about-card {
+                padding: 24px 22px;
+            }
+
+            .metric {
+                padding: 18px;
+            }
+
+            /* --- product visuals --- */
+            .product-visual {
+                min-height: 240px;
+            }
+
+            .visual-card,
+            .calm-card,
+            .magazine-card {
+                max-width: 100%;
+            }
+
+            .calm-card {
+                height: 260px;
+            }
+
+            .breath {
+                width: 148px;
+                height: 148px;
+            }
+
+            .breath span {
+                width: 64px;
+                height: 64px;
+                font-size: 24px;
+            }
+
+            .magazine-card {
+                padding: 22px;
+                min-height: 260px;
+            }
+
+            .magazine-card .moon {
+                width: 96px;
+                height: 96px;
+                left: 18px;
+                bottom: 18px;
+            }
+
+            /* --- download --- */
+            .download-wrap {
+                padding: 28px 22px;
+                border-radius: 24px;
+            }
+
+            .download-actions {
+                width: 100%;
+            }
+
+            .bazaar-badge-img {
+                height: 48px;
+            }
+
+            /* --- ad panel --- */
+            .ad-panel {
+                padding: 26px 20px;
+                border-radius: 24px;
+            }
+
+            .ad-panel h2 {
+                font-size: 22px;
+            }
+
+            .ad-card {
+                padding: 20px;
+            }
+
+            /* --- footer --- */
+            .footer {
+                margin-top: 56px;
+                border-radius: 24px 24px 0 0;
+                padding-top: 42px;
+            }
+
+            .footer-inner {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 24px 18px;
+            }
+
+            .footer-inner>div:first-child {
+                grid-column: 1 / -1;
+            }
+
+            /* --- gallery on small screens --- */
+            .ring-wrap {
+                width: min(100% - 24px, 640px);
+            }
+
+            .ring-btn {
+                display: none;
+            }
+
+            .ring.is-live {
+                height: clamp(290px, 82vw, 400px);
+            }
+
+            .slot {
+                width: clamp(150px, 42vw, 250px);
+            }
+
+            .card {
+                border-radius: 20px;
+            }
+
+            .ring-hint {
+                font-size: 10px;
+                margin-top: 6px;
+            }
+        }
+
+        /* ---------- small phone ---------- */
+        @media (max-width: 420px) {
+            :root {
+                --topbar-h: 62px;
+                --section-y: 68px;
+            }
+
+            .container {
+                width: calc(100% - 24px);
+            }
+
+            .topbar {
+                width: calc(100% - 16px);
+                border-radius: 22px;
+                padding: 0 8px;
+            }
+
+            .brand {
+                font-size: 13px;
+            }
+
+            .brand-mark {
+                width: 26px;
+                height: 26px;
+                border-radius: 8px;
+            }
+
+            .brand-mark span {
+                width: 10px;
+                height: 10px;
+            }
+
+            .nav-cta {
+                padding: 9px 11px;
+                font-size: 9.5px;
+                border-radius: 12px;
+            }
+
+            .menu-btn {
+                width: 40px;
+                height: 40px;
+                border-radius: 12px;
+                font-size: 17px;
+            }
+
+            .hero h1 {
+                font-size: 27px;
+            }
+
+            .hero-actions .btn {
+                min-width: 0;
+                flex: 1 1 100%;
+                padding: 12px 14px;
+            }
+
+            .section-heading h2 {
+                font-size: 21px;
+            }
+
+            .product-content h2 {
+                font-size: 21px;
+            }
+
+            .ad-panel h2 {
+                font-size: 20px;
+            }
+
+            .download-wrap h2 {
+                font-size: 20px;
+            }
+
+            .download-wrap {
+                padding: 24px 18px;
+            }
+
+            .ad-panel {
+                padding: 22px 17px;
+            }
+
+            .about-card {
+                padding: 20px 18px;
+            }
+
+            .download-actions {
+                gap: 10px;
+            }
+
+            .bazaar-badge-img {
+                height: 44px;
+            }
+
+            .hero-media {
+                height: clamp(250px, 82vw, 340px);
+            }
+
+            .slot {
+                width: clamp(132px, 42vw, 200px);
+            }
+
+            .ring.is-live {
+                height: clamp(250px, 84vw, 340px);
+            }
+
+            .ring-wrap {
+                width: calc(100% - 20px);
+            }
+
+            .footer-inner {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px 14px;
+            }
+
+            .magazine-card .magazine-title {
+                font-size: 22px;
+                margin-top: 28px;
+            }
+        }
+
+        /* ---------- very short landscape phones ---------- */
+        @media (max-height: 520px) and (orientation: landscape) {
+            .topbar {
+                position: relative;
+                top: 0;
+            }
+
+            .hero {
+                padding-top: 32px;
+            }
+
+            .hero-media {
+                height: clamp(220px, 46vh, 300px);
+            }
+
+            .mobile-drawer {
+                max-height: 60vh;
+            }
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+
+            * {
+                transition: none !important;
+            }
+
+            .float {
+                animation: none !important;
+            }
+        }
+    </style>
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://bubbleplanner.ir/#organization",
+                "name": "بابل پلنر",
+                "url": "https://bubbleplanner.ir/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://bubbleplanner.ir/logo.png"
+                },
+                "sameAs": []
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://bubbleplanner.ir/#website",
+                "url": "https://bubbleplanner.ir/",
+                "name": "بابل پلنر",
+                "description": "برنامه‌ریزی، ساخت عادت‌های خوب، بابل‌نوت، مجله حباب امشب و اتاق آرامش.",
+                "publisher": {
+                    "@id": "https://bubbleplanner.ir/#organization"
+                },
+                "inLanguage": "fa-IR",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://bubbleplanner.ir/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "بابل پلنر",
+                "alternateName": "Bubble Planner",
+                "description": "بابل پلنر؛ برنامه‌ریزی، ساخت عادت‌های خوب، بابل‌نوت، مجله حباب امشب و اتاق آرامش.",
+                "url": "https://bubbleplanner.ir/",
+                "image": "https://bubbleplanner.ir/logo.png",
+                "applicationCategory": "LifestyleApplication",
+                "operatingSystem": "Android",
+                "inLanguage": "fa",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "IRR"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "bestRating": "5",
+                    "ratingCount": "5200"
+                },
+                "publisher": {
+                    "@id": "https://bubbleplanner.ir/#organization"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <header class="topbar" id="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="#home" aria-label="بابل پلنر"><span class="brand-mark"><span></span></span>بابل
+                پلنر</a>
+            <nav class="nav" aria-label="ناوبری اصلی">
+                <a href="#features">امکانات</a>
+                <a href="#gallery">گالری</a>
+                <a href="about us.html">درباره ما</a>
+                <a href="advertisement.html">تبلیغات</a>
+                <a href="#reviews">نظرات</a>
+                <a href="privacy.html">حریم خصوصی</a>
+                <a href="contact.html">تماس با ما</a>
+            </nav>
+            <a class="nav-cta" href="#download">دانلود رایگان</a>
+            <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileDrawer"
+                aria-label="باز کردن منو">☰</button>
+        </div>
+        <nav class="mobile-drawer" id="mobileDrawer" aria-label="ناوبری موبایل">
+            <a href="#features">امکانات</a>
+            <a href="#gallery">گالری تصاویر</a>
+            <a href="about us.html">درباره ما</a>
+            <a href="advertisement.html">تبلیغات در بابل پلنر</a>
+            <a href="#reviews">نظرات کاربران</a>
+            <a href="privacy.html">حریم خصوصی</a>
+            <a href="contact.html">تماس با ما</a>
+            <a href="#download">دانلود رایگان</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-inner">
+                <div class="hero-copy reveal">
+                    <span class="eyebrow hero-eyebrow">BUBBLE PLANNER · DAILY COMPANION</span>
+                    <h1>برنامه‌ریزی، اما <span class="accent"><strong>گوگولی</strong></span>!</h1>
+                    <p>بابل پلنر یه همراه بامزه و دوست‌داشتنیه که کمکت می‌کنه کارهات رو منظم کنی، عادت‌های خوب بسازی و
+                        هر روز رو با انرژی مثبت شروع کنی.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#download">دانلود رایگان ↗</a>
+                        <a class="btn btn-ghost" href="#features">بیشتر بشناسش</a>
+                    </div>
+
+                </div>
+
+                <div class="hero-visual reveal">
+                    <div class="hero-frame">
+                        <div class="frame-topline"><span>Bubble Planner</span><span>برنامه امروز</span></div>
+                        <div class="hero-media">
+                            <img src="phone.gif" alt="نمای اپلیکیشن بابل پلنر در موبایل" id="phoneImage"
+                                fetchpriority="high" decoding="async" />
+                            <div class="hero-fallback" id="phoneFallback" aria-hidden="true">
+                                <div class="phone-fallback">
+                                    <div class="phone-fallback-top"><span>بابل پلنر</span><span>۹۰٪</span></div>
+                                    <div class="phone-fallback-card"><b>برنامه امروز ✦</b>
+                                        <div class="phone-fallback-task"><i></i> ورزش صبحگاهی</div>
+                                        <div class="phone-fallback-task"><i></i> مطالعه کتاب</div>
+                                        <div class="phone-fallback-task"><i></i> انجام کارهای امروز</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-decoration">
+                        <span class="floating-badge b1">🧘 اتاق آرامش</span>
+                        <span class="floating-badge b2">📝 بابل‌نوت</span>
+                        <span class="floating-badge b3">🌙 مجله حباب</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section-space section-muted">
+            <div class="container">
+                <div class="section-heading centered reveal">
+                    <div><span class="eyebrow">FEATURES</span>
+                        <h2>هر چیزی که برای یه روز بهتر لازمه،<br /><strong>توی بابل پلنر هست.</strong></h2>
+                    </div>
+                    <p>از مدیریت کارها تا آرامش ذهن؛ بخش‌های بابل پلنر طوری کنار هم قرار گرفته‌اند که تجربه روزانه‌ات
+                        ساده و دوست‌داشتنی بماند.</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card reveal"><span class="feature-number">01</span>
+                        <div class="feature-icon">✓</div>
+                        <h3>مدیریت کارها</h3>
+                        <p>تسک‌ها را با اولویت و دسته‌بندی مرتب کن و پیشرفت روزانه‌ات را ببین.</p>
+                    </article>
+                    <article class="feature-card reveal"><span class="feature-number">02</span>
+                        <div class="feature-icon">◌</div>
+                        <h3>اتاق آرامش</h3>
+                        <p>تمرین تنفس، صداهای آرامش‌بخش و لحظه‌هایی برای فاصله گرفتن از شلوغی.</p>
+                    </article>
+                    <article class="feature-card reveal"><span class="feature-number">03</span>
+                        <div class="feature-icon">✎</div>
+                        <h3>بابل نوت</h3>
+                        <p>یادداشت‌هایت را با رنگ، فونت و برچسب دلخواه ثبت و همیشه در دسترس نگه دار.</p>
+                    </article>
+                    <article class="feature-card reveal"><span class="feature-number">04</span>
+                        <div class="feature-icon">↗</div>
+                        <h3>عادت‌سازی و آمار</h3>
+                        <p>استریک بساز، روند پیشرفتت را ببین و قدم‌های کوچک اما مداوم بردار.</p>
+                    </article>
+                </div>
+                <div class="all-features reveal">
+                    <div><strong>و کلی چیز دیگه...</strong><span>پادکست‌ها، مجله حباب، بازی نور و تجربه‌های کوچک برای
+                            روزهای بهتر.</span></div><a class="btn btn-ghost" href="#magazine">بریم سراغ بخش‌ها ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="task-management" class="product-section light section-space">
+            <div class="container product-row">
+                <div class="product-visual reveal">
+                    <img src="assets/tasks.png" alt="مدیریت کارها در بابل پلنر" class="widget-shot" loading="lazy"
+                        decoding="async" />
+                </div>
+                <div class="product-content reveal">
+                    <span class="mini-label">TASK MANAGEMENT</span>
+                    <h2>کارهای امروزت را<br /><strong>سبک‌تر و مرتب‌تر کن.</strong></h2>
+                    <p>کارهات را با اولویت‌بندی دقیق، دسته‌بندی رنگی و یادآوری‌های به‌موقع مدیریت کن؛ بدون اینکه صفحه
+                        شلوغ و خسته‌کننده شود.</p>
+                    <ul class="feature-list">
+                        <li><span class="dot"></span> اولویت‌بندی و دسته‌بندی سریع</li>
+                        <li><span class="dot"></span> یادآوری هوشمند روزانه</li>
+                        <li><span class="dot"></span> نمایش ساده وضعیت هر کار</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="bubble-note" class="product-section soft section-space">
+            <div class="container product-row reverse">
+                <div class="product-visual reveal">
+                    <img src="assets/note.png" alt="بابل نوت در بابل پلنر" class="widget-shot" loading="lazy"
+                        decoding="async" />
+                </div>
+                <div class="product-content reveal">
+                    <span class="mini-label" style="color:#7a67d9">BUBBLE NOTE</span>
+                    <h2>هر چیزی که توی ذهنت هست،<br /><strong>یه جای قشنگ برای موندن داره.</strong></h2>
+                    <p>یادداشت‌های روزانه را با فونت، رنگ و برچسب دلخواه بنویس و برای پیدا کردن دوباره‌شان، همه‌چیز را
+                        مرتب نگه دار.</p>
+                    <ul class="feature-list">
+                        <li><span class="dot" style="background:#7a67d9"></span> انتخاب فونت و رنگ دلخواه</li>
+                        <li><span class="dot" style="background:#7a67d9"></span> برچسب‌گذاری برای دسترسی سریع</li>
+                        <li><span class="dot" style="background:#7a67d9"></span> جستجوی سریع در یادداشت‌ها</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="magazine" class="product-section dark section-space">
+            <div class="container product-row">
+                <div class="product-visual reveal">
+                    <div class="magazine-card">
+                        <div class="magazine-top"><span>BUBBLE TONIGHT</span><span>مجله حباب امشب</span></div>
+                        <p class="magazine-title">هر شب،<br />یک حباب تازه.</p>
+                        <p>روایت‌های ساده و صمیمی از موضوعات روان‌شناسی، رشد فردی و حال خوب.</p>
+                        <div class="moon"></div>
+                    </div>
+                </div>
+                <div class="product-content reveal">
+                    <span class="mini-label">TONIGHT'S BUBBLE</span>
+                    <h2>شب‌ها هم برای خودت<br /><strong>یه برنامه کوچیک داشته باش.</strong></h2>
+                    <p>مجله حباب امشب بخشی از تجربه شبانه بابل پلنره؛ کوتاه، صمیمی و مناسب چند دقیقه مطالعه قبل از خواب.
+                    </p>
+                    <ul class="feature-list">
+                        <li><span class="dot"></span> شماره‌های تازه و موضوعات متنوع</li>
+                        <li><span class="dot"></span> روایت ساده و خودمونی</li>
+                        <li><span class="dot"></span> فضای شبانه و دل‌نشین</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="relaxation" class="product-section pink section-space">
+            <div class="container product-row reverse">
+                <div class="product-visual reveal">
+                    <img src="assets/calmroom.png" alt="اتاق آرامش در بابل پلنر" class="widget-shot" loading="lazy"
+                        decoding="async" />
+                </div>
+                <div class="product-content reveal">
+                    <span class="mini-label" style="color:#3ca874">CALM ROOM</span>
+                    <h2>هر وقت شلوغ شد،<br /><strong>یه مکث کوچیک داشته باش.</strong></h2>
+                    <p>اتاق آرامش برای لحظه‌هایی طراحی شده که فقط چند دقیقه فاصله می‌خوای؛ از تنفس و مدیتیشن تا صداهای
+                        آرامش‌بخش.</p>
+                    <ul class="feature-list">
+                        <li><span class="dot" style="background:#3ca874"></span> تمرین‌های تنفس و مدیتیشن</li>
+                        <li><span class="dot" style="background:#3ca874"></span> صداهای آرامش‌بخش طبیعت</li>
+                        <li><span class="dot" style="background:#3ca874"></span> بازی‌های ذهنی برای ریلکسی</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             ===== GALLERY RING (post1.png … post4.png) ==============
+             ========================================================= -->
+        <section id="gallery" class="gallery-section section-space">
+            <div class="container">
+                <div class="section-heading centered reveal">
+                    <div><span class="eyebrow">GALLERY</span>
+                        <h2>این مسیر رو<br /><strong>باهم انجام میدیم.</strong></h2>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="ring-wrap reveal" id="ringWrap" role="region" aria-roledescription="carousel"
+                aria-label="گالری تصاویر بابل پلنر" tabindex="0">
+                <div class="ring-stage">
+                    <div class="ring" id="ring">
+                        <div class="slot">
+                            <div class="float" style="--d:0s">
+                                <figure class="card">
+                                    <img src="assets/post1.png" alt="پست ۱ بابل پلنر" loading="lazy" decoding="async"
+                                        draggable="false" />
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="slot">
+                            <div class="float" style="--d:-1.5s">
+                                <figure class="card">
+                                    <img src="assets/post2.png" alt="پست ۲ بابل پلنر" loading="lazy" decoding="async"
+                                        draggable="false" />
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="slot">
+                            <div class="float" style="--d:-3s">
+                                <figure class="card">
+                                    <img src="assets/post3.png" alt="پست ۳ بابل پلنر" loading="lazy" decoding="async"
+                                        draggable="false" />
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="slot">
+                            <div class="float" style="--d:-4.5s">
+                                <figure class="card">
+                                    <img src="assets/post4.png" alt="پست ۴ بابل پلنر" loading="lazy" decoding="async"
+                                        draggable="false" />
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="ring-btn next" id="ringNext" type="button" aria-label="تصویر بعدی">‹</button>
+                    <button class="ring-btn prev" id="ringPrev" type="button" aria-label="تصویر قبلی">›</button>
+                </div>
+
+                <div class="ring-dots" id="ringDots" aria-label="انتخاب تصویر"></div>
+                <p class="ring-hint">برای چرخوندن حلقه، بکش یا اسکرول کن ✦</p>
+            </div>
+        </section>
+
+        <section id="about" class="about section-space">
+            <div class="container">
+                <div class="section-heading centered reveal">
+                    <div><span class="eyebrow">ABOUT BUBBLE PLANNER</span>
+                        <h2>برنامه‌ریزی، ولی با <strong>حال خوب.</strong></h2>
+                    </div>
+                    <p>بابل پلنر از دل همین ایده ساخته شده: نظم داشتن لازم نیست خشک و جدی باشد؛ می‌تواند دوست‌داشتنی،
+                        رنگی و انسانی باشد.</p>
+                </div>
+                <div class="about-grid">
+                    <article class="about-card reveal"><span class="eyebrow">OUR IDEA</span>
+                        <h3>قرار نیست زندگی را پیچیده‌تر کنیم.</h3>
+                        <p>بابل پلنر تلاش می‌کند ابزارهای کاربردی برنامه‌ریزی، عادت‌سازی، یادداشت و آرامش را در یک تجربه
+                            ساده و گوگولی کنار هم قرار دهد؛ تجربه‌ای که دوست داشته باشی هر روز دوباره برگردی سراغش.</p>
+                    </article>
+                    <div class="about-metrics">
+                        <div class="metric reveal"><strong>۱۰+</strong><span>بخش کاربردی</span></div>
+                        <div class="metric reveal"><strong>۴.۸</strong><span>میانگین امتیاز</span></div>
+                        <div class="metric reveal"><strong>🫧</strong><span>تجربه رایگان</span></div>
+                        <div class="metric reveal"><strong>هر روز</strong><span>یک فرصت تازه برای بهتر شدن</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="section-space section-muted">
+            <div class="container">
+                <div class="section-heading centered reveal">
+                    <div><span class="eyebrow">COMMUNITY</span>
+                        <h2>کاربرا چی می‌گن؟<br /><strong>خودشون بهتر از ما می‌گن.</strong></h2>
+                    </div>
+                    <p>چندتا از بازخوردهایی که از کاربرای بابل پلنر گرفتیم.</p>
+                </div>
+                <div class="review-grid">
+                    <article class="review-card reveal">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">«واقعا از هر نظر عالیه ❤ ...»</p>
+                        <div class="reviewer">
+                            <div class="avatar">ز</div>
+                            <div><strong>زینب</strong><span>کاربر بابل پلنر</span></div>
+                        </div>
+                    </article>
+                    <article class="review-card reveal">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">«فضاش خیلی فانتزی و پینترستی هست...»</p>
+                        <div class="reviewer">
+                            <div class="avatar">ا</div>
+                            <div><strong>الیا</strong><span>کاربر بابل پلنر</span></div>
+                        </div>
+                    </article>
+                    <article class="review-card reveal">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">«سلام واقعا برنامه‌ی خوبی هست...»</p>
+                        <div class="reviewer">
+                            <div class="avatar">ه</div>
+                            <div><strong>هستی</strong><span>کاربر بابل پلنر</span></div>
+                        </div>
+                    </article>
+                    <article class="review-card reveal">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">«به شدت آرامش‌بخش...»</p>
+                        <div class="reviewer">
+                            <div class="avatar">ک</div>
+                            <div><strong>کیمیا</strong><span>کاربر بابل پلنر</span></div>
+                        </div>
+                    </article>
+                </div>
+                <div class="rating-row">
+                    <div class="rating-pill"><b>⭐ ۴.۹</b><span>از ۵۲۰۰+ کاربر</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="section-space">
+            <div class="container">
+                <div class="download-wrap reveal">
+                    <div><span class="eyebrow">GET BUBBLE PLANNER</span>
+                        <h2>امروز رو، قشنگ‌تر برنامه‌ریزی کن.</h2>
+                        <p>بابل پلنر رو رایگان دریافت کن و از اولین روز، برنامه‌ریزی رو یکم گوگولی‌تر تجربه کن.</p>
+                    </div>
+                    <div class="download-actions">
+                        <a href="http://cafebazaar.ir/app/?id=co.median.android.rddqzbl&ref=share" target="_blank"
+                            rel="noopener" class="bazaar-badge-link"><img src="badge.png"
+                                alt="دانلود بابل پلنر از کافه بازار" class="bazaar-badge-img" id="bazaarBadge"
+                                loading="lazy" decoding="async" /></a>
+                        <a href="http://cafebazaar.ir/app/?id=co.median.android.rddqzbl&ref=share" target="_blank"
+                            rel="noopener" class="bazaar-fallback" id="bazaarFallback">دانلود از کافه بازار ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="advertise" class="ad-bridge section-space">
+            <div class="container">
+                <div class="ad-panel reveal">
+                    <div>
+                        <span class="eyebrow">BUBBLE PLANNER × BRANDS</span>
+                        <h2>برندها هم می‌تونن<br /><strong>بخشی از تجربه بابل پلنر باشن.</strong></h2>
+                        <p>برای برندها و کسب‌وکارها، بابل پلنر جایگاه‌های تبلیغاتی و اسپانسرینگ محتوا دارد. تعرفه‌ها،
+                            نمونه اجرا، پروپوزال، ثبت سفارش و تمام مسیر همکاری داخل صفحه تبلیغات مدیریت می‌شود.</p>
+                        <div class="ad-points"><span class="ad-point">📣 جایگاه‌های تبلیغاتی</span><span
+                                class="ad-point">🌙 اسپانسرینگ مجله</span><span class="ad-point">🎧 اسپانسرینگ
+                                پادکست</span></div>
+                    </div>
+                    <div class="ad-card">
+                        <div class="ad-card-icon">↗</div>
+                        <h3>همکاری تبلیغاتی با بابل پلنر</h3>
+                        <p>برای دیدن جایگاه‌ها و شروع کمپین، وارد صفحه تبلیغات شو.</p><a class="btn btn-primary"
+                            href="advertisement.html" style="width:100%">مشاهده صفحه تبلیغات ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div><a class="brand" href="#home"><span class="brand-mark"><span></span></span>بابل پلنر</a>
+                <p>برنامه‌ریزی، اما گوگولی! 🫧</p>
+            </div>
+            <div><strong>بابل پلنر</strong><a href="#features">امکانات</a><a href="#gallery">گالری تصاویر</a><a
+                    href="about us.html">درباره ما</a><a href="#reviews">نظرات</a></div>
+            <div><strong>بخش‌ها</strong><a href="#task-management">تسک‌ها</a><a href="#bubble-note">بابل‌نوت</a><a
+                    href="#magazine">مجله حباب</a><a href="#relaxation">اتاق آرامش</a></div>
+            <div><strong>همکاری</strong><a href="advertisement.html">تبلیغات در بابل پلنر</a><a href="privacy.html">حریم
+                    خصوصی</a><a href="contact.html">تماس با ما</a><a href="#download">دانلود رایگان</a></div>
+        </div>
+        <div class="container footer-bottom">© ۱۴۰۵ بابل پلنر · تمامی حقوق محفوظ است</div>
+    </footer>
+
+    <script defer>
+        (function () {
+            'use strict';
+            const topbar = document.getElementById('topbar');
+            const menu = document.getElementById('menuBtn');
+            menu?.addEventListener('click', () => {
+                const open = topbar.classList.toggle('open');
+                menu.setAttribute('aria-expanded', String(open));
+                menu.textContent = open ? '×' : '☰';
+            });
+            document.querySelectorAll('.mobile-drawer a').forEach(a => a.addEventListener('click', () => {
+                topbar.classList.remove('open');
+                menu.setAttribute('aria-expanded', 'false');
+                menu.textContent = '☰';
+            }));
+            // close the drawer on Escape / outside tap
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && topbar.classList.contains('open')) {
+                    topbar.classList.remove('open');
+                    menu.setAttribute('aria-expanded', 'false');
+                    menu.textContent = '☰';
+                }
+            });
+            document.addEventListener('pointerdown', e => {
+                if (!topbar.classList.contains('open')) return;
+                if (topbar.contains(e.target)) return;
+                topbar.classList.remove('open');
+                menu.setAttribute('aria-expanded', 'false');
+                menu.textContent = '☰';
+            }, { passive: true });
+
+            const els = document.querySelectorAll('.reveal');
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if ('IntersectionObserver' in window && !reduce) {
+                const io = new IntersectionObserver(entries => entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('in-view');
+                        io.unobserve(e.target);
+                    }
+                }), { threshold: .1, rootMargin: '0px 0px -30px' });
+                els.forEach(el => io.observe(el));
+            } else {
+                els.forEach(el => el.classList.add('in-view'));
+            }
+            const phone = document.getElementById('phoneImage'),
+                fallback = document.getElementById('phoneFallback');
+            if (phone) {
+                phone.addEventListener('error', () => {
+                    phone.style.display = 'none';
+                    fallback.style.display = 'grid';
+                });
+            }
+            const badge = document.getElementById('bazaarBadge'),
+                badgeFallback = document.getElementById('bazaarFallback');
+            if (badge) {
+                badge.addEventListener('error', () => {
+                    badge.style.display = 'none';
+                    badgeFallback.style.display = 'inline-flex';
+                });
+            }
+            document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+                const id = a.getAttribute('href');
+                if (!id || id === '#') return;
+                const el = document.querySelector(id);
+                if (el) {
+                    e.preventDefault();
+                    const bar = document.getElementById('topbar');
+                    const offset = (bar ? bar.getBoundingClientRect().height : 80) + 28;
+                    window.scrollTo({
+                        top: el.getBoundingClientRect().top + window.scrollY - offset,
+                        behavior: reduce ? 'auto' : 'smooth'
+                    });
+                }
+            }));
+        })();
+
+        /* =========================================================
+           ===== THE RING — post1.png … post4.png ==================
+           Nothing ever leaves the frame.
+           ========================================================= */
+        (function () {
+            'use strict';
+
+            const wrap = document.getElementById('ringWrap');
+            const ring = document.getElementById('ring');
+            if (!wrap || !ring) return;
+
+            const slots = Array.prototype.slice.call(ring.querySelectorAll('.slot'));
+            const cards = Array.prototype.slice.call(ring.querySelectorAll('.card'));
+            const n = slots.length;
+            if (!n) return;
+
+            const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            const BACK_SCALE = 0.66;   /* how small the far side gets */
+            const LIFT = 22;           /* the back of the ring rides up */
+            const TILT = 9;            /* degrees, and it sinks */
+            const STEP = Math.PI * 2 / n;
+
+            let orbit = 180;
+            let pull = 260;
+
+            let turn = 0;              /* continuous, never clamped, never wrapped */
+            let target = 0;
+            let raf = null;
+
+            let dragging = false;
+            let moved = false;
+            let startX = 0, startY = 0, startTurn = 0;
+            let wheelTimer = null;
+
+            /* switch from the fallback row to the ring */
+            ring.classList.add('is-live');
+
+            /* ---------- dots ---------- */
+            const dotsWrap = document.getElementById('ringDots');
+            const dots = slots.map(function (_, i) {
+                if (!dotsWrap) return null;
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'ring-dot';
+                b.setAttribute('aria-label', 'تصویر ' + (i + 1));
+                b.addEventListener('click', function () {
+                    const cur = Math.round(turn);
+                    const curIdx = ((cur % n) + n) % n;
+                    let d = i - curIdx;
+                    if (d > n / 2) d -= n;
+                    if (d < -n / 2) d += n;
+                    target = cur + d;
+                    startTick();
+                });
+                dotsWrap.appendChild(b);
+                return b;
+            });
+
+            function currentIndex() {
+                return ((Math.round(turn) % n) + n) % n;
+            }
+
+            function updateDots() {
+                const idx = currentIndex();
+                for (let i = 0; i < dots.length; i++) {
+                    if (dots[i]) dots[i].classList.toggle('active', i === idx);
+                }
+            }
+
+            /* ---------- measure (viewport-aware) ---------- */
+            function measure() {
+                const cw = slots[0].offsetWidth || 260;
+                const wrapW = wrap.clientWidth || 320;
+                /* keep the ring inside its frame on narrow screens */
+                orbit = Math.min(cw * 0.68, Math.max(wrapW * 0.30, cw * 0.40));
+                pull = Math.max(cw * 0.95, 150);
+            }
+
+            /* ---------- paint ---------- */
+            function render() {
+                for (let i = 0; i < n; i++) {
+                    const th = (i - turn) * STEP;
+                    const f = (Math.cos(th) + 1) / 2;      /* 1 front, 0 back */
+                    const x = Math.sin(th) * orbit;
+                    const s = BACK_SCALE + (1 - BACK_SCALE) * f;
+                    const y = -(1 - f) * LIFT;
+                    const z = Math.round(f * 100);
+
+                    const el = slots[i];
+                    el.style.transform =
+                        'translate(-50%, -50%) translate3d(' +
+                        x.toFixed(2) + 'px,' + y.toFixed(2) + 'px,0) scale(' + s.toFixed(4) + ')';
+                    el.style.zIndex = String(z);
+                    el.style.opacity = (0.6 + 0.4 * f).toFixed(3);
+                    el.style.pointerEvents = f > 0.62 ? 'auto' : 'none';
+                }
+                updateDots();
+            }
+
+            /* ---------- snap animation ---------- */
+            function tick() {
+                const diff = target - turn;
+                if (Math.abs(diff) < 0.0008) {
+                    turn = target;
+                    render();
+                    raf = null;
+                    return;
+                }
+                turn += diff * 0.16;
+                render();
+                raf = requestAnimationFrame(tick);
+            }
+
+            function startTick() {
+                if (REDUCE) { turn = target; render(); return; }
+                if (raf === null) raf = requestAnimationFrame(tick);
+            }
+
+            function stopTick() {
+                if (raf !== null) {
+                    cancelAnimationFrame(raf);
+                    raf = null;
+                }
+            }
+
+            /* ---------- drag ---------- */
+            function onDown(e) {
+                if (e.pointerType === 'mouse' && e.button !== 0) return;
+                dragging = true;
+                moved = false;
+                startX = e.clientX;
+                startY = e.clientY;
+                startTurn = turn;
+                stopTick();
+                wrap.classList.add('is-dragging');
+                window.addEventListener('pointermove', onMove, { passive: true });
+                window.addEventListener('pointerup', onUp);
+                window.addEventListener('pointercancel', onUp);
+            }
+
+            function onMove(e) {
+                if (!dragging) return;
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+
+                if (!moved) {
+                    if (Math.abs(dx) < 6) return;
+                    if (Math.abs(dx) <= Math.abs(dy)) return; /* vertical → let the page scroll */
+                    moved = true;
+                }
+
+                /* no clamp, no wrap */
+                turn = startTurn - dx / pull;
+                render();
+            }
+
+            function onUp() {
+                if (!dragging) return;
+                dragging = false;
+                wrap.classList.remove('is-dragging');
+                window.removeEventListener('pointermove', onMove);
+                window.removeEventListener('pointerup', onUp);
+                window.removeEventListener('pointercancel', onUp);
+                target = Math.round(turn);
+                startTick();
+            }
+
+            wrap.addEventListener('pointerdown', onDown);
+
+            /* ---------- horizontal wheel / trackpad ---------- */
+            wrap.addEventListener('wheel', function (e) {
+                if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; /* vertical = page scroll */
+                e.preventDefault();
+                stopTick();
+                turn += (e.deltaX / pull) * 1.1;
+                render();
+                clearTimeout(wheelTimer);
+                wheelTimer = setTimeout(function () {
+                    target = Math.round(turn);
+                    startTick();
+                }, 130);
+            }, { passive: false });
+
+            /* ---------- keyboard ---------- */
+            wrap.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft') {
+                    target = Math.round(turn) + 1;
+                    startTick();
+                    e.preventDefault();
+                } else if (e.key === 'ArrowRight') {
+                    target = Math.round(turn) - 1;
+                    startTick();
+                    e.preventDefault();
+                }
+            });
+
+            /* ---------- arrows ---------- */
+            const nextBtn = document.getElementById('ringNext');
+            const prevBtn = document.getElementById('ringPrev');
+            if (nextBtn) nextBtn.addEventListener('click', function () {
+                target = Math.round(turn) + 1;
+                startTick();
+            });
+            if (prevBtn) prevBtn.addEventListener('click', function () {
+                target = Math.round(turn) - 1;
+                startTick();
+            });
+
+            /* ---------- tilt: it sinks, it does not lift ---------- */
+            cards.forEach(function (card) {
+                card.addEventListener('pointermove', function (e) {
+                    if (dragging) return;
+                    if (e.pointerType !== 'mouse') return; /* skip on touch */
+                    const r = card.getBoundingClientRect();
+                    if (!r.width || !r.height) return;
+                    const nx = ((e.clientX - r.left) / r.width) * 2 - 1;
+                    const ny = ((e.clientY - r.top) / r.height) * 2 - 1;
+                    card.style.setProperty('--rx', (-ny * TILT).toFixed(2) + 'deg');
+                    card.style.setProperty('--ry', (nx * TILT).toFixed(2) + 'deg');
+                });
+                card.addEventListener('pointerleave', function () {
+                    card.style.setProperty('--rx', '0deg');
+                    card.style.setProperty('--ry', '0deg');
+                });
+            });
+
+            /* ---------- resize ---------- */
+            let rt = null;
+            window.addEventListener('resize', function () {
+                clearTimeout(rt);
+                rt = setTimeout(function () {
+                    measure();
+                    render();
+                }, 120);
+            });
+            window.addEventListener('orientationchange', function () {
+                setTimeout(function () { measure(); render(); }, 200);
+            });
+
+            /* observe container size (robust against layout shifts) */
+            if ('ResizeObserver' in window) {
+                let rot = null;
+                new ResizeObserver(function () {
+                    clearTimeout(rot);
+                    rot = setTimeout(function () { measure(); render(); }, 80);
+                }).observe(wrap);
+            }
+
+            /* re-measure once webfonts settle */
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(function () { measure(); render(); });
+            }
+
+            /* ---------- boot ---------- */
+            measure();
+            render();
+            requestAnimationFrame(function () {
+                measure();
+                render();
+            });
+        })();
+    </script>
+</body>
+
+</html>
